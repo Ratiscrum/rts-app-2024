@@ -12,7 +12,7 @@ const NavLinks = () => {
   const pathname = usePathname();
   const links = [
     { href: '/podcasts', label: 'Podcasts' },
-    // { href: '/chat', label: 'Chat' },
+    { href: '/ocean', label: 'Ocean' },
   ];
 
   return (
