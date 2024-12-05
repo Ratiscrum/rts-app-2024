@@ -19,7 +19,7 @@ export function ThemeToggle() {
     <DropdownMenu>
       <DropdownMenuTrigger asChild>
         <Button variant="outline" size="icon">
-          {theme === 'christmas' ? (
+          {theme === 'ocean' ? (
             <Gift className="h-[1.2rem] w-[1.2rem]" />
           ) : (
             <>
@@ -37,8 +37,8 @@ export function ThemeToggle() {
         <DropdownMenuItem onClick={() => setTheme('dark')}>
           Dark
         </DropdownMenuItem>
-        <DropdownMenuItem onClick={() => setTheme('christmas')}>
-          Christmas
+        <DropdownMenuItem onClick={() => setTheme('ocean')}>
+          Ocean
         </DropdownMenuItem>
         <DropdownMenuItem onClick={() => setTheme('system')}>
           System

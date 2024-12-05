@@ -85,39 +85,39 @@ html body[data-scroll-locked] {
     --sidebar-border: 240 3.7% 15.9%;
     --sidebar-ring: 217.2 91.2% 59.8%;
   }
-  .christmas {
-    --background: 138 40% 93%; /* Soft frosty green */
+  .ocean {
+    --background: 210 45% 93%; /* Soft ocean blue */
     --foreground: 0 0% 10%; /* Dark contrast */
-    --card: 120 30% 94%; /* Light greenish white */
+    --card: 200 30% 94%; /* Light bluish white */
     --card-foreground: 0 0% 15%; /* Darker text */
-    --popover: 120 10% 96%; /* Subtle background green */
+    --popover: 200 10% 96%; /* Subtle background blue */
     --popover-foreground: 0 0% 20%; /* Clear contrast for text */
-    --primary: 0 65% 50%; /* Christmas red */
+    --primary: 210 65% 50%; /* Ocean blue */
     --primary-foreground: 0 0% 100%; /* White text for contrast */
-    --secondary: 40 90% 60%; /* Golden yellow */
-    --secondary-foreground: 0 0% 15%; /* Dark text on gold */
-    --muted: 120 10% 85%; /* Muted soft green */
+    --secondary: 180 90% 60%; /* Turquoise */
+    --secondary-foreground: 0 0% 15%; /* Dark text on turquoise */
+    --muted: 200 10% 85%; /* Muted soft blue */
     --muted-foreground: 0 0% 25%; /* Subtle contrast */
-    --accent: 0 65% 50%; /* Bright Christmas red */
+    --accent: 210 65% 50%; /* Bright ocean blue */
     --accent-foreground: 0 0% 100%; /* White text on accent */
-    --destructive: 0 75% 45%; /* Deep red for warnings */
+    --destructive: 210 75% 45%; /* Deep blue for warnings */
     --destructive-foreground: 0 0% 100%; /* White text on destructive */
-    --border: 120 10% 80%; /* Subtle green border */
-    --input: 120 8% 95%; /* Soft input field */
-    --ring: 40 90% 60%; /* Golden highlight */
-    --chart-1: 138 52% 53%; /* Green */
-    --chart-2: 0 65% 50%; /* Red */
-    --chart-3: 40 90% 60%; /* Gold */
-    --chart-4: 210 45% 55%; /* Icy blue */
+    --border: 200 10% 80%; /* Subtle blue border */
+    --input: 200 8% 95%; /* Soft input field */
+    --ring: 180 90% 60%; /* Turquoise highlight */
+    --chart-1: 210 52% 53%; /* Dark blue */
+    --chart-2: 210 65% 50%; /* Ocean blue */
+    --chart-3: 180 90% 60%; /* Turquoise */
+    --chart-4: 160 45% 55%; /* Light blue */
     --chart-5: 0 0% 100%; /* Pure white */
-    --sidebar-background: 120 25% 30%; /* Vert sombre pour un arrière-plan festif */
-    --sidebar-foreground: 0 0% 100%; /* Blanc éclatant pour le texte */
-    --sidebar-primary: 0 76% 50%; /* Rouge vif pour les éléments primaires */
-    --sidebar-primary-foreground: 0 0% 100%; /* Blanc pour contraster avec le rouge */
-    --sidebar-accent: 50 50% 45%; /* Vert olive pour les accents */
-    --sidebar-accent-foreground: 0 0% 100%; /* Blanc pour contraster avec les accents */
-    --sidebar-border: 0 76% 50%; /* Rouge pour les bordures */
-    --sidebar-ring: 43 74% 52%; /* Doré pour un effet festif sur les éléments sélectionnés */
+    --sidebar-background: 200 25% 30%; /* Dark blue for a festive background */
+    --sidebar-foreground: 0 0% 100%; /* Bright white for text */
+    --sidebar-primary: 210 76% 50%; /* Vivid blue for primary elements */
+    --sidebar-primary-foreground: 0 0% 100%; /* White to contrast with blue */
+    --sidebar-accent: 190 50% 45%; /* Teal for accents */
+    --sidebar-accent-foreground: 0 0% 100%; /* White to contrast with accents */
+    --sidebar-border: 210 76% 50%; /* Blue for borders */
+    --sidebar-ring: 180 74% 52%; /* Turquoise for a festive effect on selected elements */
   }
 }
 

@@ -403,7 +403,7 @@ export default function RatiLogo({ size = 'md' }: { size?: LogoSize }) {
           'motion-preset-expand select-none font-semibold tracking-tighter',
         )}
       >
-        Rati<span className="font-medium text-primary">fondue</span>
+        Rati<span className="font-medium text-primary">blue</span>
       </p>
     </div>
   );

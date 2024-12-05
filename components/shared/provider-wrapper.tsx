@@ -14,7 +14,7 @@ export const ProviderWrapper: FC<ProviderWrapperProps> = ({ children }) => {
     <ThemeProvider
       attribute="class"
       defaultTheme="system"
-      themes={['light', 'dark', 'system', 'christmas']}
+      themes={['light', 'dark', 'system', 'ocean']}
       enableSystem
       disableTransitionOnChange
     >
