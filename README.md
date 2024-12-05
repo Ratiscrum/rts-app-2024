@@ -1,4 +1,4 @@
-# Ratiscrum - App 2024
+# Ratiblue - App 2024
 
 ## Setup
 
