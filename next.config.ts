@@ -15,6 +15,9 @@ const nextConfig: NextConfig = {
     };
     return config;
   },
+  sassOptions: {
+    implementation: 'sass-embedded',
+  },
 };
 
 export default nextConfig;
