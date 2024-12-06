@@ -1,23 +1,24 @@
 import ElementDialog from '@/components/ocean/element-dialog';
 import OceanBackground from '@/components/ocean/ocean';
 import { cn } from '@/lib/utils/utils';
-import { FC } from 'react';
+import { FC, useContext } from 'react';
 import OceanElement from '@/components/ocean-element/ocean-element';
-import { SeaElementContent } from '@/models/seaElementContent';
+import { SeaElementsContext } from '@/lib/providers/sea-elements-provider';
 import BeachBackground from '@/components/ocean/beach';
 
 type Props = {
   className?: string;
-  seaElementsContent: SeaElementContent[];
 };
 
-export const OceanPanel: FC<Props> = ({ className, seaElementsContent }) => {
+export const OceanPanel: FC<Props> = ({ className }) => {
+  const elements = useContext(SeaElementsContext);
+
   return (
     <div>
       <div className={cn('relative h-full w-full border', className)}>
         <BeachBackground></BeachBackground>
         <OceanBackground></OceanBackground>
-        {seaElementsContent.map(async (seaElementContent, idx) => {
+        {elements.map(async (seaElementContent, idx) => {
           return (
             <ElementDialog key={idx} point={seaElementContent.seaElementProps}>
               <div>

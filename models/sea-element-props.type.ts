@@ -7,4 +7,5 @@ export type SeaElementProps = {
   topPrct: number;
   lottieName?: string;
   imageName?: string;
+  errorMessage?: string;
 };

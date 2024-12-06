@@ -4,6 +4,9 @@ import { GameProvider } from '@/lib/providers/game-provider';
 import { OrgansProvider } from '@/lib/providers/organ-provider';
 import { PlayPage } from './play-page';
 import getSeaElementContent from '@/actions/getSeaElementContent';
+import { SeaElementsProvider } from '@/lib/providers/sea-elements-provider';
+import { GameModals } from './game-modals';
+import { TabProvider } from '@/lib/providers/tab-provider';
 
 export default async function Page() {
   const seaElementNames: string[] = [
@@ -26,10 +29,17 @@ export default async function Page() {
   );
 
   return (
-    <OrgansProvider>
-      <GameProvider>
-        <PlayPage seaElementsContent={seaElementsContent} />
-      </GameProvider>
-    </OrgansProvider>
+    <SeaElementsProvider elements={seaElementsContent}>
+      <OrgansProvider>
+        <TabProvider>
+          <GameProvider>
+            <>
+              <PlayPage />
+              <GameModals />
+            </>
+          </GameProvider>
+        </TabProvider>
+      </OrgansProvider>
+    </SeaElementsProvider>
   );
 }
