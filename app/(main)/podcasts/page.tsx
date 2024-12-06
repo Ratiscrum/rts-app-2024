@@ -7,7 +7,7 @@ export default function Page() {
 
       <p>Interview de Frederic Le Moigne, océanographe au CNRS.</p>
 
-      <WaveformPlayer audio="" />
+      <WaveformPlayer audio="/sounds/podcast.mp3" />
     </div>
   );
 }

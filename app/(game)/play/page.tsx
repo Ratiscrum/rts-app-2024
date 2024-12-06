@@ -4,7 +4,6 @@ import { GameProvider } from '@/lib/providers/game-provider';
 import { OrgansProvider } from '@/lib/providers/organ-provider';
 import { PlayPage } from './play-page';
 import getSeaElementContent from '@/actions/getSeaElementContent';
-import { SeaElementsProvider } from '@/lib/providers/sea-elements-provider';
 import { GameModals } from './game-modals';
 import { TabProvider } from '@/lib/providers/tab-provider';
 
@@ -31,14 +30,12 @@ export default async function Page() {
   return (
     <OrgansProvider>
       <TabProvider>
-        <SeaElementsProvider elements={seaElementsContent}>
-          <GameProvider>
-            <>
-              <PlayPage />
-              <GameModals />
-            </>
-          </GameProvider>
-        </SeaElementsProvider>
+        <GameProvider>
+          <>
+            <PlayPage elements={seaElementsContent} />
+            <GameModals elements={seaElementsContent} />
+          </>
+        </GameProvider>
       </TabProvider>
     </OrgansProvider>
   );

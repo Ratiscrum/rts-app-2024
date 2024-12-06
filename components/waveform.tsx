@@ -1,7 +1,7 @@
 'use client';
 
 import WavesurferPlayer from '@wavesurfer/react';
-import { FC, useEffect, useState } from 'react';
+import { FC, useState } from 'react';
 import { Button } from './ui/button';
 import { PauseIcon, PlayIcon } from 'lucide-react';
 import { cn } from '@/lib/utils/utils';
@@ -12,7 +12,6 @@ export type WaveformPlayerProps = {
   onPlay?: () => void;
   onPause?: () => void;
   onTimeupdate?: (time: number) => void;
-  isPlaying?: boolean;
 };
 
 export const WaveformPlayer: FC<WaveformPlayerProps & { audio: string }> = ({
@@ -21,19 +20,10 @@ export const WaveformPlayer: FC<WaveformPlayerProps & { audio: string }> = ({
   showButton = true,
   onPause,
   onPlay,
-  isPlaying,
 }) => {
   const [wavesurfer, setWavesurfer] = useState<any>(null);
 
-  useEffect(() => {
-    if (!wavesurfer) return;
-
-    if (isPlaying) {
-      wavesurfer.play();
-    } else {
-      wavesurfer.pause();
-    }
-  }, [isPlaying, wavesurfer]);
+  const [isPlaying, setIsPlaying] = useState(false);
 
   if (!audio) return null;
 
@@ -63,13 +53,24 @@ export const WaveformPlayer: FC<WaveformPlayerProps & { audio: string }> = ({
           url={audio}
           onReady={onReady}
           onPlay={() => {
+            setIsPlaying(true);
             if (onPlay) {
               onPlay();
             }
           }}
-          onPause={() => onPause && onPause()}
+          onPause={() => {
+            if (onPause) {
+              onPause();
+            }
+            setIsPlaying(false);
+          }}
           onInteraction={() => wavesurfer && wavesurfer.play()}
-          onFinish={() => wavesurfer && wavesurfer.seekTo(0)}
+          onFinish={() => {
+            if (wavesurfer) {
+              wavesurfer.seekTo(0);
+            }
+            setIsPlaying(false);
+          }}
         />
       </div>
     </div>

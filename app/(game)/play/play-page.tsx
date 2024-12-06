@@ -8,8 +8,13 @@ import { Tabs, TabsContent, TabsList, TabsTrigger } from '@/components/ui/tabs';
 import { OceanPanel } from './ocean-panel';
 import { Tab, TabContext } from '@/lib/providers/tab-provider';
 import { cn } from '@/lib/utils/utils';
+import { SeaElementContent } from '@/models/seaElementContent';
 
-export const PlayPage: FC = () => {
+type Props = {
+  elements: SeaElementContent[];
+};
+
+export const PlayPage: FC<Props> = ({ elements }) => {
   const isMobile = useIsMobile();
   const { tab, setTab } = useContext(TabContext);
 
@@ -25,7 +30,7 @@ export const PlayPage: FC = () => {
         </TabsContent>
         <TabsContent value="ocean" className="flex-1">
           <ScrollArea className="h-[calc(100vh-130px)]">
-            <OceanPanel className="w-full" />
+            <OceanPanel className="w-full" elements={elements} />
           </ScrollArea>
         </TabsContent>
         <TabsList className="fixed bottom-0 mt-2 w-full">
@@ -45,7 +50,7 @@ export const PlayPage: FC = () => {
     return (
       <main className="grid h-screen grid-cols-3">
         <ScrollArea className="col-span-2">
-          <OceanPanel />
+          <OceanPanel elements={elements} />
         </ScrollArea>
         <CorpPanel />
       </main>

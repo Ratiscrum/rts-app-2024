@@ -12,9 +12,9 @@ import {
   CredenzaTitle,
 } from '@/components/ui/credenza';
 import { GameContext } from '@/lib/providers/game-provider';
-import { SeaElementsContext } from '@/lib/providers/sea-elements-provider';
 import { TabContext } from '@/lib/providers/tab-provider';
 import { getRandomElement } from '@/lib/utils/utils';
+import { SeaElementContent } from '@/models/seaElementContent';
 import Link from 'next/link';
 import { useRouter } from 'next/navigation';
 import { FC, useContext } from 'react';
@@ -93,9 +93,12 @@ const loseWords = [
   'Tant pis champis.',
 ];
 
-export const GameModals: FC = () => {
+type Props = {
+  elements: SeaElementContent[];
+};
+
+export const GameModals: FC<Props> = ({ elements }) => {
   const { state, lastSelection, resetState } = useContext(GameContext);
-  const elements = useContext(SeaElementsContext);
   const { setTab } = useContext(TabContext);
   const element = elements.find(
     (e) => e.seaElementProps.organ === lastSelection,
@@ -129,7 +132,7 @@ export const GameModals: FC = () => {
         open={state === 'win'}
         onOpenChange={(open) => {
           if (!open) {
-            router.refresh('/');
+            router.replace('/');
           }
         }}
       >

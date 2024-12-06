@@ -3,18 +3,18 @@ import OceanBackground from '@/components/ocean/ocean';
 import { cn } from '@/lib/utils/utils';
 import { FC, useContext } from 'react';
 import OceanElement from '@/components/ocean-element/ocean-element';
-import { SeaElementsContext } from '@/lib/providers/sea-elements-provider';
 import BeachBackground from '@/components/ocean/beach';
 import { GameContext } from '@/lib/providers/game-provider';
 import { organsLabelsWithPrefix } from '@/models/organs.type';
 import { ArrowDown } from 'lucide-react';
+import { SeaElementContent } from '@/models/seaElementContent';
 
 type Props = {
   className?: string;
+  elements: SeaElementContent[];
 };
 
-export const OceanPanel: FC<Props> = ({ className }) => {
-  const elements = useContext(SeaElementsContext);
+export const OceanPanel: FC<Props> = ({ className, elements }) => {
   const { organToHeal } = useContext(GameContext);
 
   return (
