@@ -33,13 +33,9 @@ export default function SeaPage() {
             key={idx}
             lottieSource={'/animations/algues.json'}
             imageSource={null}
-            className={
-              'absolute z-[5000] h-20 w-20 -translate-x-1/2 -translate-y-full'
-            }
-            style={{
-              top: `${(await seaElementContent).seaElementProps.topPrct}%`,
-              left: `50%`,
-            }}
+            topPrct={(await seaElementContent).seaElementProps.topPrct}
+            leftPrct={50}
+            className={'h-20 w-20'}
           ></OceanElement>
         ))}
       </div>

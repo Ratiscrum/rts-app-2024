@@ -6,15 +6,17 @@ import lottie from 'lottie-web';
 type OceanElementProps = {
   lottieSource: string | null;
   imageSource: string | null;
-  className?: string;
-  style?: CSSProperties;
+  topPrct: number;
+  leftPrct: number;
+  className?: CSSProperties;
 };
 
 export default function OceanElement({
   lottieSource,
   imageSource,
+  topPrct,
+  leftPrct,
   className,
-  style,
 }: OceanElementProps) {
   const animationContainer = useRef(null);
 
@@ -37,8 +39,13 @@ export default function OceanElement({
   return (
     <div
       ref={animationContainer}
-      style={style}
-      className={className + ' h-20 w-20'}
+      style={{
+        top: `${topPrct}%`,
+        left: `${leftPrct}%`,
+      }}
+      className={
+        'absolute z-[5000] -translate-x-1/2 -translate-y-full ' + className
+      }
     ></div>
   );
 }
