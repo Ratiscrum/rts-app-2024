@@ -4,6 +4,7 @@ import { GameProvider } from '@/lib/providers/game-provider';
 import { OrgansProvider } from '@/lib/providers/organ-provider';
 import { Point } from '@/models/point.type';
 import { CorpPanel } from './corp-panel';
+import ElementDialog from '@/components/ocean/element-dialog';
 
 export default function Page() {
   const points: Point[] = [
@@ -81,16 +82,17 @@ export default function Page() {
             <div className={'relative'}>
               <OceanBackground></OceanBackground>
               {points.map((point, idx) => (
-                <div
-                  key={idx}
-                  className={
-                    'absolute z-[5000] h-2 w-2 -translate-x-1/2 -translate-y-full bg-orange-400'
-                  }
-                  style={{
-                    top: `${point.topPrct}%`,
-                    left: `${point.leftPrct}%`,
-                  }}
-                ></div>
+                <ElementDialog point={point}>
+                  <div
+                    key={idx}
+                    className={
+                      'absolute z-[5000] h-2 w-2 -translate-x-1/2 -translate-y-full bg-orange-400'
+                    }
+                    style={{
+                      top: `${point.topPrct}%`,
+                      left: `${point.leftPrct}%`,
+                    }}></div>
+              </ElementDialog>   
               ))}
             </div>
           </ScrollArea>
