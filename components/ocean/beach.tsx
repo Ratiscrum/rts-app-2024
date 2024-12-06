@@ -15,10 +15,9 @@ export default function BeachBackground() {
         key={-1}
         lottieSource={'/animations/beach.json'}
         imageSource={null}
-        topPrct={16.2}
+        topPrct={9.8}
         leftPrct={75}
-        className={'h-[20%] w-[40%] max-lg:h-[20%] max-lg:w-[50%]'}
-        name="Discutez avec le Monkey !"
+        className={'h-96 w-96'}
       ></OceanElement>
       <Credenza>
         <CredenzaTrigger>
@@ -26,9 +25,9 @@ export default function BeachBackground() {
             key={-2}
             lottieSource={'/animations/monkey.json'}
             imageSource={null}
-            topPrct={13}
-            leftPrct={72}
-            className={':w-[40%] h-[19%] max-lg:h-[16.5%] max-lg:w-[40%]'}
+            topPrct={8}
+            leftPrct={70}
+            className={'h-52 w-52'}
             name="Discutez avec le Monkey !"
           ></OceanElement>
         </CredenzaTrigger>
