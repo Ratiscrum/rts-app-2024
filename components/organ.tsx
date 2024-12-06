@@ -5,7 +5,7 @@ import { Tooltip, TooltipContent, TooltipTrigger } from './ui/tooltip';
 import { cn } from '@/lib/utils/utils';
 import { OrgansContext } from '@/lib/providers/organ-provider';
 import { Organs, organsLabels } from '@/models/organs.type';
-import { GameContext } from '@/lib/providers/game-provider';
+// import { GameContext } from '@/lib/providers/game-provider';
 
 type Props = {
   children: React.ReactNode;
@@ -16,7 +16,7 @@ type Props = {
 export const Organ: FC<Props> = ({ name, children, className }) => {
   const state = useContext(OrgansContext).organs?.[name] ?? 'normal';
   const title = organsLabels[name];
-  const { selectOrgan } = useContext(GameContext);
+  // const { selectOrgan } = useContext(GameContext);
 
   return (
     <Tooltip>
@@ -29,7 +29,7 @@ export const Organ: FC<Props> = ({ name, children, className }) => {
             'motion-preset-shrink scale-150 animate-pulse text-emerald-600 duration-300',
           className,
         )}
-        onClick={() => selectOrgan(name)}
+        // onClick={() => selectOrgan(name)}
         asChild
       >
         {children}

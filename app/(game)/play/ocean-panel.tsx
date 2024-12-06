@@ -1,3 +1,5 @@
+'use client';
+
 import ElementDialog from '@/components/ocean/element-dialog';
 import OceanBackground from '@/components/ocean/ocean';
 import { cn } from '@/lib/utils/utils';
@@ -23,7 +25,7 @@ export const OceanPanel: FC<Props> = ({ className, elements }) => {
         <BeachBackground></BeachBackground>
         <OceanBackground></OceanBackground>
         {organToHeal && (
-          <div className="motion-preset-compress left-4 right-4 top-20 z-50 hidden rounded-xl border-border bg-background p-2 text-center shadow lg:fixed">
+          <div className="motion-preset-compress fixed left-4 right-4 top-20 z-50 hidden rounded-xl border-border bg-background p-2 text-center shadow">
             Cliquez sur un élément de l&apos;océan pour essayer de guérir{' '}
             <span className="font-bold">
               {organsLabelsWithPrefix[organToHeal]}
@@ -35,7 +37,7 @@ export const OceanPanel: FC<Props> = ({ className, elements }) => {
         <div className="fixed bottom-16 left-1/2 z-50 flex -translate-x-1/2 animate-pulse justify-center rounded-xl border-border bg-background p-2 text-center shadow">
           Continuez de fouiller <ArrowDown className="ml-2" />
         </div>
-        {elements.map(async (seaElementContent, idx) => {
+        {elements.map((seaElementContent, idx) => {
           return (
             <ElementDialog
               key={idx}
