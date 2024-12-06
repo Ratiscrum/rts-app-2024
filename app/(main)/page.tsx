@@ -16,7 +16,7 @@ export default function Home() {
       <div className="flex flex-1 flex-col items-center justify-center rounded-lg bg-gray-200/30 p-5 text-center backdrop-blur-md md:p-0">
         <RatiLogo size="md" />
         <h2 className="mt-8 text-primary">Allons sauver l&apos;océan</h2>
-        <p className="mb-8 mt-6 w-2/4 text-lg">
+        <p className="mb-8 mt-6 lg:w-2/4 lg:text-lg">
           Jean-Marc est tombé dans un océan magique et sa santé s&apos;est liée
           à celle de l&apos;océan. Une seule solution pour guérir Jean-Marc :
           sauver l&apos;océan.

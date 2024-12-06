@@ -37,7 +37,7 @@ export default function Captcha() {
       <CredenzaTrigger asChild>
         <Button
           className={
-            'mt-12 rounded-xl bg-secondary px-5 py-2 text-secondary-foreground'
+            'mt-12 rounded-xl bg-secondary px-5 py-2 text-secondary-foreground max-md:hidden'
           }
         >
           Ose résoudre ce captcha... 🔫
