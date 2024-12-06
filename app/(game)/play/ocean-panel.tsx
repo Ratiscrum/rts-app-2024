@@ -4,6 +4,7 @@ import { cn } from '@/lib/utils/utils';
 import { FC } from 'react';
 import OceanElement from '@/components/ocean-element/ocean-element';
 import { SeaElementContent } from '@/models/seaElementContent';
+import BeachBackground from '@/components/ocean/beach';
 
 type Props = {
   className?: string;
@@ -13,6 +14,7 @@ type Props = {
 export const OceanPanel: FC<Props> = ({ className, seaElementsContent }) => {
   return (
     <div className={cn('relative', className)}>
+      <BeachBackground></BeachBackground>
       <OceanBackground></OceanBackground>
       {seaElementsContent.map(async (seaElementContent, idx) => {
         return (
