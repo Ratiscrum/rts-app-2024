@@ -1,3 +1,4 @@
+import OceanBackground from '@/components/ocean/ocean';
 import RatiLogo from '@/components/shared/rati-logo';
 import { Button } from '@/components/ui/button';
 import { Label } from '@radix-ui/react-dropdown-menu';
@@ -7,6 +8,9 @@ import Link from 'next/link';
 export default function Home() {
   return (
     <div className="flex flex-grow flex-col items-center px-4">
+      <div className="absolute bottom-0 left-0 right-0 top-[30%] -z-20 overflow-hidden">
+        <OceanBackground />
+      </div>
       <div className="flex flex-1 flex-col items-center justify-center text-center">
         <RatiLogo size="md" />
         <h2 className="mt-8 text-primary">Allons sauver l&apos;océan</h2>

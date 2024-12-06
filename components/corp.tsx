@@ -11,7 +11,7 @@ export const Corp = () => {
   return (
     <>
       <div className="relative aspect-[1/2.2] w-64">
-        <Silhouette className="w-76 top-0 h-full w-full" />
+        <Silhouette className="w-76 top-0 h-full w-full text-muted-foreground" />
         <Organ name="heart" className="absolute right-[38%] top-[23%]">
           <Heart className="h-6" />
         </Organ>

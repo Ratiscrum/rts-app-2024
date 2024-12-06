@@ -68,7 +68,7 @@ export default function Header({ className }: { className?: string }) {
   return (
     <header
       className={cn(
-        'sticky top-0 z-50 w-full border-b border-border/40 shadow backdrop-blur dark:border-border',
+        'sticky top-0 z-50 w-full border-b border-border/40 bg-background/80 shadow backdrop-blur dark:border-border',
         className,
       )}
     >
