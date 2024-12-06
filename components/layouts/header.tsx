@@ -9,10 +9,7 @@ import { SidebarTrigger } from '../ui/sidebar';
 
 const NavLinks = () => {
   const pathname = usePathname();
-  const links = [
-    { href: '/podcasts', label: 'Podcasts' },
-    { href: '/ocean', label: 'Ocean' },
-  ];
+  const links = [{ href: '/podcasts', label: 'Podcasts' }];
 
   return (
     <nav className="ml-10 hidden items-center gap-4 text-sm sm:flex xl:gap-6">
