@@ -1,6 +1,6 @@
 'use client';
 
-import { CSSProperties, useEffect, useRef } from 'react';
+import { useEffect, useRef } from 'react';
 import lottie from 'lottie-web';
 
 type OceanElementProps = {
@@ -8,7 +8,7 @@ type OceanElementProps = {
   imageSource: string | null;
   topPrct: number;
   leftPrct: number;
-  className?: CSSProperties;
+  className?: string;
 };
 
 export default function OceanElement({
