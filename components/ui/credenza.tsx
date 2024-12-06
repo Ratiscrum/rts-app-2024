@@ -76,7 +76,7 @@ const CredenzaContent = ({ className, children, ...props }: CredenzaProps) => {
 
   // TODO: Fix z-index
   return (
-    <CredenzaContent className={cn(className, "z-[10000]")} {...props}>
+    <CredenzaContent className={cn(className, 'z-[10000]')} {...props}>
       {children}
     </CredenzaContent>
   );
