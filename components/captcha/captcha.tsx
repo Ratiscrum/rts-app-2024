@@ -54,7 +54,11 @@ export default function Captcha() {
         </CredenzaHeader>
         <CredenzaBody className={'h-[700px]'}>
           {!isCaptchaSolved && <DoomCaptcha onKill={resolveCaptcha} />}
-          {/*<p></p>*/}
+          {isCaptchaSolved && (
+            <div className={'flex h-full w-full items-center justify-center'}>
+              <p className={'text-5xl'}>👍</p>
+            </div>
+          )}
         </CredenzaBody>
         <CredenzaFooter className="mt-2 flex items-center gap-2 rounded-lg border bg-gray-300 p-3 max-lg:flex-col">
           {isCaptchaSolved && (
