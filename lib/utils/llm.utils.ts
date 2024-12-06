@@ -37,7 +37,9 @@ export const formatChat = async (
   modelWllama: Wllama | null,
   messages: Conversation['messages'],
 ): Promise<string> => {
-  const template = new Template(DEFAULT_CHAT_TEMPLATE);
+  const template = new Template(
+    modelWllama?.getChatTemplate() ?? DEFAULT_CHAT_TEMPLATE,
+  );
   const bos_token: string = textDecoder.decode(
     await modelWllama?.detokenize([modelWllama?.getBOS()]),
   );
