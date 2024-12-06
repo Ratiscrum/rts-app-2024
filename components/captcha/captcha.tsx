@@ -35,13 +35,13 @@ export default function Captcha() {
       }}
     >
       <CredenzaTrigger asChild>
-        <p
+        <Button
           className={
-            'mt-8 cursor-pointer rounded-2xl bg-blue-500 p-2 text-xl text-white'
+            'mt-12 rounded-xl bg-secondary px-5 py-2 text-secondary-foreground'
           }
         >
-          Essayez notre superbe Captcha !!
-        </p>
+          Ose résoudre ce captcha... 🔫
+        </Button>
       </CredenzaTrigger>
       <CredenzaContent className="lg:min-w-[1000px]">
         <CredenzaHeader className="flex flex-col items-center gap-5 md:flex-row">

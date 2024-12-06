@@ -21,7 +21,7 @@ export default function Footer() {
             </Link>
           </div>
           <div>
-            <p className="text-sm">Mais où se cache le fromage ... ? 🧀🦻🏼</p>
+            <p className="text-sm">Mais où se cache le rat ?</p>
           </div>
         </div>
       </div>

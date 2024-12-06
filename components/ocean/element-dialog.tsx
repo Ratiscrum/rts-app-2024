@@ -37,7 +37,7 @@ export default function ElementDialog({
       <CredenzaTrigger asChild>{children}</CredenzaTrigger>
       <CredenzaContent className="lg:min-w-[1000px]">
         <CredenzaHeader className="flex flex-col items-center gap-5 md:flex-row">
-          <img src="/favicon-192.png" alt="sea point" className="h-28" />
+          <img src={point.imageName} alt="sea point" className="h-28" />
           <div className="">
             <CredenzaTitle>{point.title}</CredenzaTitle>
             <CredenzaDescription className="text-left">
