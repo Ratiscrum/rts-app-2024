@@ -4,7 +4,6 @@ import Link from 'next/link';
 import { usePathname } from 'next/navigation';
 import { cn } from '@/lib/utils/utils';
 import RatiLogo from '../shared/rati-logo';
-import { ThemeToggle } from '../shared/theme-toggle';
 import { MobileSidebar } from './mobile-sidebar';
 import { SidebarTrigger } from '../ui/sidebar';
 
@@ -82,7 +81,7 @@ export default function Header() {
           <NavLinks />
         </div>
         <div className="flex items-center gap-4">
-          <ThemeToggle />
+          {/* <ThemeToggle /> */}
           {/* {user && (
             <div className="hidden sm:block">
               <ConnectedUserMenu
