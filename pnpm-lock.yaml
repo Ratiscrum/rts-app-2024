@@ -53,6 +53,9 @@ importers:
       '@types/mdx':
         specifier: ^2.0.13
         version: 2.0.13
+      '@wavesurfer/react':
+        specifier: ^1.0.7
+        version: 1.0.7(react@19.0.0-rc-66855b96-20241106)(wavesurfer.js@7.8.10)
       '@wllama/wllama':
         specifier: ^2.0.1
         version: 2.0.1
@@ -1055,6 +1058,12 @@ packages:
 
   '@ungap/structured-clone@1.2.0':
     resolution: {integrity: sha512-zuVdFrMJiuCDQUMCzQaD6KL28MjnqqN8XnAqiEq9PNm/hCPTSGfrXCOfwj1ow4LFb/tNymJPwsNbVePc1xFqrQ==}
+
+  '@wavesurfer/react@1.0.7':
+    resolution: {integrity: sha512-Bw2rd2zqVL1ERy8N9mciacbQW3N5Gn9oRjhq3kjqgtLeE8a1WSTU+4kU0E37541jf432eNZ8lNzuodFFSiNccw==}
+    peerDependencies:
+      react: ^18.2.0
+      wavesurfer.js: '>=7.7.14'
 
   '@wllama/wllama@2.0.1':
     resolution: {integrity: sha512-vT9UKvyBQReeJzQgDqMbhUw1Lf7OdpiDPDMPbdeuEeOK8ScD71/iO3ALQTLxJSNYkASwKOYKGCrLpdZ1bihSGA==}
@@ -2906,6 +2915,9 @@ packages:
   vfile@6.0.3:
     resolution: {integrity: sha512-KzIbH/9tXat2u30jf+smMwFCsno4wHVdNmzFyL+T/L3UGqqk6JKfVqOFOZEpZSHADH1k40ab6NUIXZq422ov3Q==}
 
+  wavesurfer.js@7.8.10:
+    resolution: {integrity: sha512-fQtMENm5uPvB7GGZtWj61W82IighH2Jx6nbW6ciL1uITU6Ea9i3rvp+Z2CTJaau5dMwAD6pCALkNvTkIXIIeYw==}
+
   which-boxed-primitive@1.1.0:
     resolution: {integrity: sha512-Ei7Miu/AXe2JJ4iNF5j/UphAgRoma4trE6PtisM09bPygb3egMH3YLW/befsWb1A1AxvNSFidOFTB18XtnIIng==}
     engines: {node: '>= 0.4'}
@@ -3804,6 +3816,11 @@ snapshots:
       eslint-visitor-keys: 4.2.0
 
   '@ungap/structured-clone@1.2.0': {}
+
+  '@wavesurfer/react@1.0.7(react@19.0.0-rc-66855b96-20241106)(wavesurfer.js@7.8.10)':
+    dependencies:
+      react: 19.0.0-rc-66855b96-20241106
+      wavesurfer.js: 7.8.10
 
   '@wllama/wllama@2.0.1': {}
 
@@ -6127,6 +6144,8 @@ snapshots:
     dependencies:
       '@types/unist': 3.0.3
       vfile-message: 4.0.2
+
+  wavesurfer.js@7.8.10: {}
 
   which-boxed-primitive@1.1.0:
     dependencies:
