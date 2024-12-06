@@ -1,31 +1,38 @@
 import ElementDialog from '@/components/ocean/element-dialog';
 import OceanBackground from '@/components/ocean/ocean';
 import { cn } from '@/lib/utils/utils';
-import { Point } from '@/models/point.type';
 import { FC } from 'react';
+import OceanElement from '@/components/ocean-element/ocean-element';
+import { SeaElementContent } from '@/models/seaElementContent';
 
 type Props = {
-  points: Point[];
   className?: string;
+  seaElementsContent: SeaElementContent[];
 };
 
-export const OceanPanel: FC<Props> = ({ points, className }) => {
+export const OceanPanel: FC<Props> = ({ className, seaElementsContent }) => {
   return (
     <div className={cn('relative', className)}>
       <OceanBackground></OceanBackground>
-      {points.map((point, idx) => (
-        <ElementDialog point={point} key={idx}>
-          <div
-            className={
-              'absolute z-[5000] h-2 w-2 -translate-x-1/2 -translate-y-full bg-orange-400'
-            }
-            style={{
-              top: `${point.topPrct}%`,
-              left: `${point.leftPrct}%`,
-            }}
-          ></div>
-        </ElementDialog>
-      ))}
+      {seaElementsContent.map(async (seaElementContent, idx) => {
+        return (
+          <ElementDialog key={idx} point={seaElementContent.seaElementProps}>
+            <div>
+              <OceanElement
+                lottieSource={
+                  '/animations/' + seaElementContent.seaElementProps.lottieName
+                }
+                imageSource={
+                  '/images/' + seaElementContent.seaElementProps.imageName
+                }
+                topPrct={seaElementContent.seaElementProps.topPrct}
+                leftPrct={50}
+                className={'h-20 w-20'}
+              ></OceanElement>
+            </div>
+          </ElementDialog>
+        );
+      })}
     </div>
   );
 };
