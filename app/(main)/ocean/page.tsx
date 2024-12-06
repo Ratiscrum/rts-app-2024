@@ -28,20 +28,22 @@ export default function SeaPage() {
       <h1>Sea page</h1>
       <div className={'relative w-full'}>
         <OceanBackground></OceanBackground>
-        {seaElementsContent.map(async (seaElementContent, idx) => (
-          <OceanElement
-            key={idx}
-            lottieSource={'/animations/algues.json'}
-            imageSource={null}
-            className={
-              'absolute z-[5000] h-20 w-20 -translate-x-1/2 -translate-y-full'
-            }
-            style={{
-              top: `${(await seaElementContent).seaElementProps.topPrct}%`,
-              left: `50%`,
-            }}
-          ></OceanElement>
-        ))}
+        {seaElementsContent.map(async (seaElementContent, idx) => {
+          const seaElement = await seaElementContent;
+
+          return (
+            <OceanElement
+              key={idx}
+              lottieSource={
+                '/animations/' + seaElement.seaElementProps.lottieName
+              }
+              imageSource={'/images/' + seaElement.seaElementProps.imageName}
+              topPrct={seaElement.seaElementProps.topPrct}
+              leftPrct={50}
+              className={'h-20 w-20'}
+            ></OceanElement>
+          );
+        })}
       </div>
     </div>
   );

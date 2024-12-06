@@ -5,4 +5,6 @@ export type SeaElementProps = {
   description: string;
   organ: Organs;
   topPrct: number;
+  lottieName?: string;
+  imageName?: string;
 };

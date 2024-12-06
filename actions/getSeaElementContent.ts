@@ -27,6 +27,8 @@ export default async function getSeaElementContent(
       description: mdxSource.frontmatter.description,
       organ: mdxSource.frontmatter.organ,
       topPrct: mdxSource.frontmatter.topPrct,
+      lottieName: mdxSource.frontmatter.lottieName,
+      imageName: mdxSource.frontmatter.imageName,
     } as unknown as SeaElementProps,
     mdx: mdxSource,
   };
