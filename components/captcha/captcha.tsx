@@ -16,11 +16,12 @@ import { ArrowRight } from 'lucide-react';
 import DoomCaptcha from '@/components/captcha/doom';
 import { useState } from 'react';
 
-export default function Captcha({
-  captchaCompleted,
-}: {
-  captchaCompleted: () => void;
-}) {
+export default function Captcha() {
+  // {
+  // captchaCompleted,
+  // }: {
+  //   captchaCompleted: () => void;
+  // }
   const [isCaptchaSolved, setIsCaptchaSolved] = useState(false);
 
   const resolveCaptcha = () => {
@@ -34,7 +35,13 @@ export default function Captcha({
       }}
     >
       <CredenzaTrigger asChild>
-        <p>Captcha clique moi</p>
+        <p
+          className={
+            'mt-8 cursor-pointer rounded-2xl bg-blue-500 p-2 text-xl text-white'
+          }
+        >
+          Essayez notre superbe Captcha !!
+        </p>
       </CredenzaTrigger>
       <CredenzaContent className="lg:min-w-[1000px]">
         <CredenzaHeader className="flex flex-col items-center gap-5 md:flex-row">
@@ -54,7 +61,7 @@ export default function Captcha({
             <CredenzaClose asChild>
               <Button
                 onClick={() => {
-                  captchaCompleted();
+                  // captchaCompleted();
                 }}
               >
                 VOUS AVEZ REUSSI ! BRAVO
