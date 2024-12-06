@@ -7,11 +7,11 @@ import Link from 'next/link';
 
 export default function Home() {
   return (
-    <div className="flex flex-grow flex-col items-center px-4 ">
+    <div className="flex flex-grow flex-col items-center px-4">
       <div className="absolute bottom-0 left-0 right-0 top-[0%] -z-20 overflow-hidden">
         <OceanBackground />
       </div>
-      <div className="flex flex-1 flex-col items-center justify-center text-center backdrop-blur-md bg-gray-200/30 rounded-lg">
+      <div className="flex flex-1 flex-col items-center justify-center rounded-lg bg-gray-200/30 text-center backdrop-blur-md">
         <RatiLogo size="md" />
         <h2 className="mt-8 text-primary">Allons sauver l&apos;océan</h2>
         <p className="mb-8 mt-6 w-2/4 text-lg">

@@ -17,13 +17,11 @@ export const Organ: FC<Props> = ({ name, children, className }) => {
   const state = useContext(OrgansContext).organs?.[name] ?? 'normal';
   const title = organsLabels[name];
 
-  // const { selectOrgan } = useContext(GameContext);
-
   return (
     <Tooltip>
       <TooltipTrigger
         className={cn(
-          'h-10 transition-all duration-1000',
+          'h-10 transform transition-all duration-200',
           state === 'normal' && 'text-muted',
           state === 'hurt' && 'animate-pulse text-red-600',
           state === 'heal' &&

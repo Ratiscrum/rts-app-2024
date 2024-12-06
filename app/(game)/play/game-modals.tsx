@@ -16,6 +16,7 @@ import { SeaElementsContext } from '@/lib/providers/sea-elements-provider';
 import { TabContext } from '@/lib/providers/tab-provider';
 import { getRandomElement } from '@/lib/utils/utils';
 import Link from 'next/link';
+import { useRouter } from 'next/navigation';
 import { FC, useContext } from 'react';
 
 const winWords = [
@@ -99,6 +100,7 @@ export const GameModals: FC = () => {
   const element = elements.find(
     (e) => e.seaElementProps.organ === lastSelection,
   );
+  const router = useRouter();
 
   return (
     <>
@@ -123,7 +125,14 @@ export const GameModals: FC = () => {
         </CredenzaContent>
       </Credenza>
 
-      <Credenza open={state === 'win'}>
+      <Credenza
+        open={state === 'win'}
+        onOpenChange={(open) => {
+          if (!open) {
+            router.refresh('/');
+          }
+        }}
+      >
         <CredenzaContent>
           <CredenzaHeader>
             <CredenzaTitle>{getRandomElement(winWords)}</CredenzaTitle>
@@ -137,7 +146,7 @@ export const GameModals: FC = () => {
               <Link href={'/podcasts'}>Voir les podcasts</Link>
             </Button>
             <Button asChild>
-              <Link href={'/play'}>Recommencer</Link>
+              <Link href={'/'}>Recommencer</Link>
             </Button>
           </CredenzaFooter>
         </CredenzaContent>

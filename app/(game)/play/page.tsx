@@ -29,17 +29,17 @@ export default async function Page() {
   );
 
   return (
-    <SeaElementsProvider elements={seaElementsContent}>
-      <OrgansProvider>
-        <TabProvider>
+    <OrgansProvider>
+      <TabProvider>
+        <SeaElementsProvider elements={seaElementsContent}>
           <GameProvider>
             <>
               <PlayPage />
               <GameModals />
             </>
           </GameProvider>
-        </TabProvider>
-      </OrgansProvider>
-    </SeaElementsProvider>
+        </SeaElementsProvider>
+      </TabProvider>
+    </OrgansProvider>
   );
 }
