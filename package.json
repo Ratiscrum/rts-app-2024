@@ -20,6 +20,7 @@
     "@radix-ui/react-scroll-area": "^1.2.1",
     "@radix-ui/react-separator": "^1.1.0",
     "@radix-ui/react-slot": "^1.1.0",
+    "@radix-ui/react-tabs": "^1.1.1",
     "@radix-ui/react-tooltip": "^1.1.4",
     "@wllama/wllama": "git+https://github.com/ngxson/wllama.git#3b9276a0d830d7519e43f62a91dac057d8806f1f",
     "class-variance-authority": "^0.7.1",

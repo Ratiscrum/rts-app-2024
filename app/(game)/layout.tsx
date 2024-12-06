@@ -4,8 +4,8 @@ import Header from '@/components/layouts/header';
 export default function Layout({ children }: { children: React.ReactNode }) {
   return (
     <main>
-      <Header className="fixed" />
-      {children}
+      <Header className="lg:fixed" />
+      <div>{children}</div>
       <Footer />
     </main>
   );

@@ -12,9 +12,12 @@ export const CorpPanel: FC = () => {
   return (
     <div className="flex h-full flex-col items-center justify-center gap-3 bg-muted p-4">
       <div className="text-center">
-        <h3>Jean Marc a besoin de votre aide !</h3>
+        <h4>Jean-Marc a besoin de votre aide !</h4>
         {title && (
-          <p>Agissez sur l&apos;océan pour guérir {title} de Jean Marc</p>
+          <p>
+            Agissez sur l&apos;océan pour guérir{' '}
+            <span className="font-bold text-primary">{title}</span> de Jean-Marc
+          </p>
         )}
       </div>
       <Corp />

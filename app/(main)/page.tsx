@@ -11,8 +11,8 @@ export default function Home() {
         <RatiLogo size="md" />
         <h2 className="mt-8 text-primary">Allons sauver l&apos;océan</h2>
         <p className="mb-8 mt-6 w-2/4 text-lg">
-          Jean Marc est tombé dans un océan magique et sa santé s&apos;est liée
-          à celle de l&apos;océan. Une seule solution pour guérir Jean Marc :
+          Jean-Marc est tombé dans un océan magique et sa santé s&apos;est liée
+          à celle de l&apos;océan. Une seule solution pour guérir Jean-Marc :
           sauver l&apos;océan.
         </p>
         <Button
