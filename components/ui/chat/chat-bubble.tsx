@@ -76,7 +76,7 @@ const chatBubbleMessageVariants = cva('p-4', {
   variants: {
     variant: {
       assistant:
-        'bg-secondary text-secondary-foreground rounded-r-lg rounded-tl-lg',
+        'bg-primary text-primary-foreground rounded-r-lg rounded-tl-lg',
       user: 'bg-primary text-primary-foreground rounded-l-lg rounded-tr-lg',
     },
     layout: {

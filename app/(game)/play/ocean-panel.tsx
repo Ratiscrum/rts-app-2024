@@ -13,7 +13,7 @@ type Props = {
 
 export const OceanPanel: FC<Props> = ({ className, seaElementsContent }) => {
   return (
-    <div className={'md:pt-16'}>
+    <div>
       <div className={cn('relative h-full w-full border', className)}>
         <BeachBackground></BeachBackground>
         <OceanBackground></OceanBackground>

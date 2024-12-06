@@ -95,10 +95,10 @@ export default function Chat() {
         {
           id: Date.now(),
           content: isModelLoading
-            ? 'Nous sommes en train de télécharger une IA dans votre navigateur. Veuillez patienter quelques instants...'
-            : isUnsupported
-              ? 'Votre navigateur ou/et votre télephone ne prend pas en charge cette IA.'
-              : "L'IA est prête à discuter avec vous",
+          ? 'Nous sommes en train de télécharger une IA dans votre navigateur. Veuillez patienter quelques instants...'
+          : isUnsupported
+            ? 'Votre navigateur ou/et votre télephone ne prend pas en charge cette IA.'
+            : "L'IA est prête à discuter avec vous",
           role: 'assistant',
         },
       ],
@@ -108,7 +108,7 @@ export default function Chat() {
   return (
     <div className="lg:mx-4">
       <h1 className="text-lg font-bold lg:text-2xl">
-        Discussion avec un rat intelligent
+        Chat with an AI
       </h1>
       <div className="mt-4 flex flex-col gap-4 overflow-hidden rounded-xl border border-border bg-background shadow-sm">
         <ChatMessageList
@@ -136,7 +136,7 @@ export default function Chat() {
               >
                 <ChatBubble variant={msg.role}>
                   <ChatBubbleAvatar
-                    fallback={msg.role === 'user' ? 'Me' : '🐀'}
+                    fallback={msg.role === 'user' ? 'Me' : '🐒'}
                   />
                   {msg.role === 'assistant' && msg.content === '' ? (
                     <ChatBubbleMessage isLoading>
@@ -159,7 +159,7 @@ export default function Chat() {
 
         <form
           onSubmit={handleSendMessage}
-          className="flex items-center gap-2 border-t border-border bg-secondary p-2 focus-within:ring-ring"
+          className="flex items-center gap-2 border-t border-border bg-muted p-2 focus-within:ring-ring"
         >
           <ChatInput
             placeholder="Type your message here..."
