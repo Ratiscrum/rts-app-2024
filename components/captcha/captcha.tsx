@@ -48,7 +48,7 @@ export default function Captcha() {
           <div className="">
             <CredenzaTitle>Résoud ce captcha !</CredenzaTitle>
             <CredenzaDescription className="text-left">
-              Mettre les touches
+              Déplacez-vous avec ZQSD et tirez avec espace !
             </CredenzaDescription>
           </div>
         </CredenzaHeader>
