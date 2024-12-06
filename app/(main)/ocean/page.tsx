@@ -2,6 +2,7 @@ import OceanBackground from '@/components/ocean/ocean';
 import getSeaElementContent from '@/actions/getSeaElementContent';
 import { SeaElementContent } from '@/models/seaElementContent';
 import OceanElement from '@/components/ocean-element/ocean-element';
+import ElementDialog from '@/components/ocean/element-dialog';
 
 export default function SeaPage() {
   const seaElementNames: string[] = [
@@ -32,16 +33,21 @@ export default function SeaPage() {
           const seaElement = await seaElementContent;
 
           return (
-            <OceanElement
-              key={idx}
-              lottieSource={
-                '/animations/' + seaElement.seaElementProps.lottieName
-              }
-              imageSource={'/images/' + seaElement.seaElementProps.imageName}
-              topPrct={seaElement.seaElementProps.topPrct}
-              leftPrct={50}
-              className={'h-20 w-20'}
-            ></OceanElement>
+            <ElementDialog key={idx} point={seaElement.seaElementProps}>
+              <div>
+                <OceanElement
+                  lottieSource={
+                    '/animations/' + seaElement.seaElementProps.lottieName
+                  }
+                  imageSource={
+                    '/images/' + seaElement.seaElementProps.imageName
+                  }
+                  topPrct={seaElement.seaElementProps.topPrct}
+                  leftPrct={50}
+                  className={'h-20 w-20'}
+                ></OceanElement>
+              </div>
+            </ElementDialog>
           );
         })}
       </div>
