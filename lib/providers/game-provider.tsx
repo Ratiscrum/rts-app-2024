@@ -45,7 +45,7 @@ export const GameProvider: FC<Props> = ({ children }) => {
     const organ = getRandomElement(organs) as Organs;
     setOrgan(organ);
     updateOrgan(organ, 'hurt');
-  }, [updateOrgan]);
+  }, []);
 
   return (
     <GameContext.Provider
