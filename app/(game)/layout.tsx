@@ -5,7 +5,7 @@ export default function Layout({ children }: { children: React.ReactNode }) {
   return (
     <main>
       <Header className="lg:fixed" />
-      <div>{children}</div>
+      {children}
       <Footer />
     </main>
   );
