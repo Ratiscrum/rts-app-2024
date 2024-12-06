@@ -21,7 +21,7 @@ export default function BeachBackground() {
         key={-1}
         lottieSource={'/animations/beach.json'}
         imageSource={null}
-        topPrct={14.8}
+        topPrct={16.2}
         leftPrct={75}
         className={'max-lg:h-[20%] max-lg:w-[50%] h-[20%] w-[40%]'}
       ></OceanElement>
@@ -33,7 +33,7 @@ export default function BeachBackground() {
                 key={-2}
                 lottieSource={'/animations/monkey.json'}
                 imageSource={null}
-                topPrct={12}
+                topPrct={13}
                 leftPrct={72}
                 className={'max-lg:h-[16.5%] max-lg:w-[40%] h-[19%] :w-[40%]'}
               ></OceanElement>

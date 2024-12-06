@@ -1,7 +1,7 @@
 import ElementDialog from '@/components/ocean/element-dialog';
 import OceanBackground from '@/components/ocean/ocean';
 import { cn } from '@/lib/utils/utils';
-import { FC, useContext } from 'react';
+import { FC, useContext, useEffect, useState } from 'react';
 import OceanElement from '@/components/ocean-element/ocean-element';
 import { SeaElementsContext } from '@/lib/providers/sea-elements-provider';
 import BeachBackground from '@/components/ocean/beach';
@@ -31,7 +31,7 @@ export const OceanPanel: FC<Props> = ({ className }) => {
                     '/images/' + seaElementContent.seaElementProps.imageName
                   }
                   topPrct={seaElementContent.seaElementProps.topPrct}
-                  leftPrct={50}
+                  leftPrct={seaElementContent.seaElementProps.leftPrct}
                   className={'h-20 w-20'}
                 ></OceanElement>
               </div>
