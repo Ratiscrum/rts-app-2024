@@ -2,23 +2,21 @@
 
 import { ScrollArea } from '@/components/ui/scroll-area';
 import { useIsMobile } from '@/hooks/use-mobile';
-import { FC } from 'react';
+import { FC, useContext } from 'react';
 import { CorpPanel } from './corp-panel';
 import { Tabs, TabsContent, TabsList, TabsTrigger } from '@/components/ui/tabs';
 import { OceanPanel } from './ocean-panel';
-import { SeaElementContent } from '@/models/seaElementContent';
+import { Tab, TabContext } from '@/lib/providers/tab-provider';
 
-type Props = {
-  seaElementsContent: SeaElementContent[];
-};
-
-export const PlayPage: FC<Props> = ({ seaElementsContent }) => {
+export const PlayPage: FC = () => {
   const isMobile = useIsMobile();
+  const { tab, setTab } = useContext(TabContext);
 
   if (isMobile) {
     return (
       <Tabs
-        defaultValue="corp"
+        value={tab}
+        onValueChange={(tab) => setTab(tab as Tab)}
         className="flex h-full w-full flex-1 flex-col overflow-x-hidden"
       >
         <TabsContent value="corp" className="flex-1">
@@ -26,10 +24,7 @@ export const PlayPage: FC<Props> = ({ seaElementsContent }) => {
         </TabsContent>
         <TabsContent value="ocean" className="flex-1">
           <ScrollArea className="h-[calc(100vh-130px)]">
-            <OceanPanel
-              className="w-full"
-              seaElementsContent={seaElementsContent}
-            />
+            <OceanPanel className="w-full" />
           </ScrollArea>
         </TabsContent>
         <TabsList className="fixed bottom-0 mt-2 w-full">
@@ -46,7 +41,7 @@ export const PlayPage: FC<Props> = ({ seaElementsContent }) => {
     return (
       <main className="grid h-screen grid-cols-3">
         <ScrollArea className="col-span-2">
-          <OceanPanel seaElementsContent={seaElementsContent} />
+          <OceanPanel />
         </ScrollArea>
         <CorpPanel />
       </main>
