@@ -5,6 +5,7 @@ module.exports = {
     domains: ['api.qrserver.com'],
   },
   transpilePackages: ['@wllama/wllama'],
+  reactStrictMode: false,
 };
 
 const nextConfig: NextConfig = {
