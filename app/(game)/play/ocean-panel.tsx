@@ -4,7 +4,6 @@ import { cn } from '@/lib/utils/utils';
 import { FC, useContext } from 'react';
 import OceanElement from '@/components/ocean-element/ocean-element';
 import { SeaElementsContext } from '@/lib/providers/sea-elements-provider';
-import { SeaElementContent } from '@/models/seaElementContent';
 import BeachBackground from '@/components/ocean/beach';
 
 type Props = {
