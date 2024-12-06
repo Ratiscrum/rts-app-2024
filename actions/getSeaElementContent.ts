@@ -27,6 +27,7 @@ export default async function getSeaElementContent(
       description: mdxSource.frontmatter.description,
       organ: mdxSource.frontmatter.organ,
       topPrct: mdxSource.frontmatter.topPrct,
+      leftPrct: mdxSource.frontmatter.leftPrct,
       lottieName: mdxSource.frontmatter.lottieName,
       imageName: mdxSource.frontmatter.imageName,
       errorMessage: mdxSource.frontmatter.errorMessage,

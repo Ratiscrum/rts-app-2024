@@ -14,6 +14,7 @@ $teal12: #84CDD4;
 
 $oceanHeight: 5000px;
 $oceanHeightStart: 35px;
+$outsideHeight: 300px;
 
 .ocean-container {
   position: relative;
@@ -25,7 +26,7 @@ $oceanHeightStart: 35px;
 
 .gradientContainer {
   // border: 1px solid #ff9900;
-  margin-top: 95px;
+  margin-top: $outsideHeight;
   height: calc($oceanHeight - $oceanHeightStart);
   overflow: hidden;
   background: linear-gradient(to bottom, #C3E5E5, #0D3F53);
@@ -209,7 +210,7 @@ $oceanHeightStart: 35px;
 
 .cPos {
   position: relative;
-  top: 100px;
+  top: $outsideHeight;
   left: 0;
   z-index: 9;
   transform: translateY(0) scale(1);

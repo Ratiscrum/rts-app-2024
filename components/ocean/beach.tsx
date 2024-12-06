@@ -6,7 +6,7 @@ import {
   CredenzaTitle,
   CredenzaTrigger,
 } from '../ui/credenza';
-import Chat from '@/app/(main)/chat/page';
+import Chat from '../shared/chat';
 
 export default function BeachBackground() {
   return (
@@ -15,9 +15,9 @@ export default function BeachBackground() {
         key={-1}
         lottieSource={'/animations/beach.json'}
         imageSource={null}
-        topPrct={13}
-        leftPrct={70}
-        className={'h-[20%] w-[40%]'}
+        topPrct={16.2}
+        leftPrct={75}
+        className={'h-[20%] w-[40%] max-lg:h-[20%] max-lg:w-[50%]'}
         name="Discutez avec le Monkey !"
       ></OceanElement>
       <Credenza>
@@ -26,9 +26,9 @@ export default function BeachBackground() {
             key={-2}
             lottieSource={'/animations/monkey.json'}
             imageSource={null}
-            topPrct={7}
-            leftPrct={65}
-            className={'h-[10%] w-[30%]'}
+            topPrct={13}
+            leftPrct={72}
+            className={':w-[40%] h-[19%] max-lg:h-[16.5%] max-lg:w-[40%]'}
             name="Discutez avec le Monkey !"
           ></OceanElement>
         </CredenzaTrigger>

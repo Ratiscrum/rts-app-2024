@@ -18,7 +18,7 @@ export const OceanPanel: FC<Props> = ({ className }) => {
   const { organToHeal } = useContext(GameContext);
 
   return (
-    <div className={'md:pt-16'}>
+    <div>
       <div className={cn('relative h-full w-full border', className)}>
         <BeachBackground></BeachBackground>
         <OceanBackground></OceanBackground>
@@ -48,7 +48,7 @@ export const OceanPanel: FC<Props> = ({ className }) => {
                     '/images/' + seaElementContent.seaElementProps.imageName
                   }
                   topPrct={seaElementContent.seaElementProps.topPrct}
-                  leftPrct={50}
+                  leftPrct={seaElementContent.seaElementProps.leftPrct}
                   className={'h-20 w-20'}
                   name={seaElementContent.seaElementProps.title}
                 ></OceanElement>
