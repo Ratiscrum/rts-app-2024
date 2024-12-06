@@ -12,11 +12,11 @@ import {
   CredenzaTitle,
   CredenzaTrigger,
 } from '../ui/credenza';
-import { Point } from '@/models/point.type';
+import { SeaElementProps } from '@/models/sea-element-props.type';
 
 interface ElementDialogProps {
   children: React.ReactNode;
-  point: Point;
+  point: SeaElementProps;
 }
 
 export default function ElementDialog({ children, point }: ElementDialogProps) {
@@ -27,18 +27,18 @@ export default function ElementDialog({ children, point }: ElementDialogProps) {
         <CredenzaHeader className="flex flex-col items-center gap-5 md:flex-row">
           <img src="/favicon-192.png" alt="sea point" className="h-28" />
           <div className="">
-            <CredenzaTitle>{point.seaElementProps.title}</CredenzaTitle>
+            <CredenzaTitle>{point.title}</CredenzaTitle>
             <CredenzaDescription className="text-left">
-              {point.seaElementProps.description}
+              {point.description}
             </CredenzaDescription>
           </div>
         </CredenzaHeader>
         {/* BODY HERE @raffaeldp */}
-        {/* <CredenzaBody>{point.seaElementProps.body}</CredenzaBody> */}
+        {/* <CredenzaBody>{point.body}</CredenzaBody> */}
         <CredenzaFooter className="mt-2 flex items-center gap-2 rounded-lg border bg-gray-300 p-3 max-lg:flex-col">
           <p className="text-left">
-            Pensez-vous que le {point.seaElementProps.title.toLowerCase()}{' '}
-            guéria le coeur de Jean Marc ?
+            Pensez-vous que le {point.title.toLowerCase()} guéria le coeur de
+            Jean Marc ?
           </p>
           <CredenzaClose asChild>
             <Button onClick={() => {}}>
