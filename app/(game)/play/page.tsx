@@ -7,6 +7,7 @@ import getSeaElementContent from '@/actions/getSeaElementContent';
 import { SeaElementsProvider } from '@/lib/providers/sea-elements-provider';
 import { GameModals } from './game-modals';
 import { TabProvider } from '@/lib/providers/tab-provider';
+import { BottleModeProvider } from '@/lib/providers/bottle-mode-provider';
 
 export default async function Page() {
   const seaElementNames: string[] = [
@@ -32,12 +33,14 @@ export default async function Page() {
     <SeaElementsProvider elements={seaElementsContent}>
       <OrgansProvider>
         <TabProvider>
-          <GameProvider>
-            <>
-              <PlayPage />
-              <GameModals />
-            </>
-          </GameProvider>
+          <BottleModeProvider>
+            <GameProvider>
+              <>
+                <PlayPage />
+                <GameModals />
+              </>
+            </GameProvider>
+          </BottleModeProvider>
         </TabProvider>
       </OrgansProvider>
     </SeaElementsProvider>

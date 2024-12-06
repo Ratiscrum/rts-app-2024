@@ -7,7 +7,6 @@ import { CorpPanel } from './corp-panel';
 import { Tabs, TabsContent, TabsList, TabsTrigger } from '@/components/ui/tabs';
 import { OceanPanel } from './ocean-panel';
 import { Tab, TabContext } from '@/lib/providers/tab-provider';
-
 export const PlayPage: FC = () => {
   const isMobile = useIsMobile();
   const { tab, setTab } = useContext(TabContext);
