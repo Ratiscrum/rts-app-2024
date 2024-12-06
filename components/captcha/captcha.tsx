@@ -46,7 +46,7 @@ export default function Captcha() {
       <CredenzaContent className="lg:min-w-[1000px]">
         <CredenzaHeader className="flex flex-col items-center gap-5 md:flex-row">
           <div className="">
-            <CredenzaTitle>Résoud ce captcha !</CredenzaTitle>
+            <CredenzaTitle>Résout ce captcha !</CredenzaTitle>
             <CredenzaDescription className="text-left">
               Déplacez-vous avec ZQSD et tirez avec espace !
             </CredenzaDescription>
