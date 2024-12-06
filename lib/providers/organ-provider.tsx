@@ -19,6 +19,7 @@ export const OrgansProvider: FC<Props> = ({ children }) => {
   const [organs, setOrgans] = useState({} as Record<Organs, OrganState>);
 
   const updateOrgan = (name: string, state: OrganState) => {
+    console.log('update organ', name, state);
     setOrgans({
       ...organs,
       [name]: state,

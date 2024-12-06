@@ -1,10 +1,12 @@
+'use client';
+
 import { organs, Organs } from '@/models/organs.type';
-import { createContext, FC, useContext } from 'react';
+import { createContext, FC, useContext, useEffect, useState } from 'react';
 import { getRandomElement } from '../utils/utils';
 import { OrgansContext } from './organ-provider';
 
 type GameContextType = {
-  organToHeal: Organs;
+  organToHeal: Organs | null;
   selectOrgan: (organ: Organs) => boolean;
 };
 
@@ -15,7 +17,9 @@ type Props = {
 };
 
 export const GameProvider: FC<Props> = ({ children }) => {
-  const organToHeal = getRandomElement(organs) as Organs;
+  const [organToHeal, setOrgan] = useState<Organs | null>(
+    null as Organs | null,
+  );
 
   const { updateOrgan } = useContext(OrgansContext);
 
@@ -23,7 +27,7 @@ export const GameProvider: FC<Props> = ({ children }) => {
     updateOrgan(organ, 'heal');
 
     setTimeout(() => {
-      updateOrgan(organ, 'heal');
+      updateOrgan(organ, 'normal');
     }, 2000);
 
     const win = organToHeal === organ;
@@ -36,6 +40,12 @@ export const GameProvider: FC<Props> = ({ children }) => {
 
     return win;
   };
+
+  useEffect(() => {
+    const organ = getRandomElement(organs) as Organs;
+    setOrgan(organ);
+    updateOrgan(organ, 'hurt');
+  }, []);
 
   return (
     <GameContext.Provider
