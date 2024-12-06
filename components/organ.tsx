@@ -25,6 +25,7 @@ export const Organ: FC<Props> = ({ name, children, className, title }) => {
           state === 'heal' && 'text-emerald-600',
           className,
         )}
+        asChild
       >
         {children}
       </TooltipTrigger>

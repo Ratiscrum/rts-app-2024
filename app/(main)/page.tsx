@@ -9,19 +9,19 @@ export default function Home() {
     <div className="flex flex-grow flex-col items-center px-4">
       <div className="flex flex-1 flex-col items-center justify-center text-center">
         <RatiLogo size="md" />
-        <h2 className="mt-8 text-primary">Allons sauver l’océan</h2>
+        <h2 className="mt-8 text-primary">Allons sauver l&apos;océan</h2>
         <p className="mb-8 mt-6 w-2/4 text-lg">
-          Jean Marc est tombé dans un océan magique et sa santé s’est liée à
-          celle de l’océan. Une seule solution pour guérir Jean Marc : sauver
-          l’océan.
+          Jean Marc est tombé dans un océan magique et sa santé s&apos;est liée
+          à celle de l&apos;océan. Une seule solution pour guérir Jean Marc :
+          sauver l&apos;océan.
         </p>
         <Button
           className="motion-preset-pulse-sm w-1/2 motion-duration-[1800ms] motion-delay-[500ms]"
           asChild
           size={'lg'}
         >
-          <Link href="/">
-            Play here
+          <Link href="/play">
+            À l&apos;abordage
             <ArrowRight className="ml-2" />
           </Link>
         </Button>

@@ -65,11 +65,16 @@ const NavLinks = () => {
 //   </div>
 // );
 
-export default function Header() {
+export default function Header({ className }: { className?: string }) {
   // const { user } = useUserContext();
 
   return (
-    <header className="sticky top-0 z-50 w-full border-b border-border/40 shadow backdrop-blur dark:border-border">
+    <header
+      className={cn(
+        'sticky top-0 z-50 w-full border-b border-border/40 shadow backdrop-blur dark:border-border',
+        className,
+      )}
+    >
       <div className="mx-auto flex h-16 max-w-screen-xl items-center justify-between px-4">
         <div className="flex items-center gap-2 lg:mr-6">
           <Link
