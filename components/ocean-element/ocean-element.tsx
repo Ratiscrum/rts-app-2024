@@ -39,21 +39,27 @@ export default function OceanElement({
     }
   }, [lottieSource]);
 
+  const content = (
+    <div
+      ref={animationContainer}
+      style={{
+        top: `calc(${topPrct}%)`,
+        left: `${leftPrct}%`,
+      }}
+      className={
+        'absolute z-[49] -translate-x-1/2 -translate-y-full transition-all hover:scale-110 hover:brightness-110 ' +
+        className
+      }
+    ></div>
+  );
+
+  if (!name) {
+    return content;
+  }
+
   return (
     <Tooltip>
-      <TooltipTrigger asChild>
-        <div
-          ref={animationContainer}
-          style={{
-            top: `calc(${topPrct}%)`,
-            left: `${leftPrct}%`,
-          }}
-          className={
-            'absolute z-[49] -translate-x-1/2 -translate-y-full transition-all hover:scale-110 hover:brightness-110 ' +
-            className
-          }
-        ></div>
-      </TooltipTrigger>
+      <TooltipTrigger asChild>{content}</TooltipTrigger>
       <TooltipContent>{name}</TooltipContent>
     </Tooltip>
   );

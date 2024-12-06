@@ -1,5 +1,6 @@
 'use client';
 
+import Content from '@/components/content';
 import { Button } from '@/components/ui/button';
 import {
   Credenza,
@@ -129,8 +130,7 @@ export const GameModals: FC = () => {
             <CredenzaDescription>Jean-Marc est guéri !</CredenzaDescription>
           </CredenzaHeader>
           <CredenzaBody>
-            {/* TODO: show description mdx */}
-            GG
+            <Content mdx={element?.mdx} />
           </CredenzaBody>
           <CredenzaFooter>
             <Button variant={'secondary'} asChild>

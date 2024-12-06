@@ -23,7 +23,7 @@ export const OceanPanel: FC<Props> = ({ className }) => {
         <BeachBackground></BeachBackground>
         <OceanBackground></OceanBackground>
         {organToHeal && (
-          <div className="motion-preset-compress fixed left-4 right-4 top-20 z-50 rounded-xl border-border bg-background p-2 text-center shadow">
+          <div className="motion-preset-compress left-4 right-4 top-20 z-50 hidden rounded-xl border-border bg-background p-2 text-center shadow lg:fixed">
             Cliquez sur un élément de l&apos;océan pour essayer de guérir{' '}
             <span className="font-bold">
               {organsLabelsWithPrefix[organToHeal]}
@@ -37,7 +37,11 @@ export const OceanPanel: FC<Props> = ({ className }) => {
         </div>
         {elements.map(async (seaElementContent, idx) => {
           return (
-            <ElementDialog key={idx} point={seaElementContent.seaElementProps}>
+            <ElementDialog
+              key={idx}
+              point={seaElementContent.seaElementProps}
+              mdx={seaElementContent.mdx as object}
+            >
               <div>
                 <OceanElement
                   lottieSource={
