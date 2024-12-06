@@ -13,6 +13,8 @@ import {
   CredenzaTrigger,
 } from '../ui/credenza';
 import { SeaElementProps } from '@/models/sea-element-props.type';
+import {useContext} from "react";
+import {GameContext} from "@/lib/providers/game-provider";
 
 interface ElementDialogProps {
   children: React.ReactNode;
@@ -20,6 +22,9 @@ interface ElementDialogProps {
 }
 
 export default function ElementDialog({ children, point }: ElementDialogProps) {
+
+  const {selectOrgan} = useContext(GameContext);
+
   return (
     <Credenza>
       <CredenzaTrigger asChild>{children}</CredenzaTrigger>
@@ -41,7 +46,9 @@ export default function ElementDialog({ children, point }: ElementDialogProps) {
             Jean Marc ?
           </p>
           <CredenzaClose asChild>
-            <Button onClick={() => {}}>
+            <Button onClick={() => {
+              selectOrgan(point.organ);
+            }}>
               Agir
               <Waves className="h-6 w-6" />
             </Button>
