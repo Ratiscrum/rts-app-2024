@@ -12,6 +12,7 @@ import {
 } from '@/components/ui/credenza';
 import { GameContext } from '@/lib/providers/game-provider';
 import { SeaElementsContext } from '@/lib/providers/sea-elements-provider';
+import { TabContext } from '@/lib/providers/tab-provider';
 import { getRandomElement } from '@/lib/utils/utils';
 import Link from 'next/link';
 import { FC, useContext } from 'react';
@@ -93,6 +94,7 @@ const loseWords = [
 export const GameModals: FC = () => {
   const { state, lastSelection, resetState } = useContext(GameContext);
   const elements = useContext(SeaElementsContext);
+  const { setTab } = useContext(TabContext);
   const element = elements.find(
     (e) => e.seaElementProps.organ === lastSelection,
   );
@@ -108,7 +110,14 @@ export const GameModals: FC = () => {
             </CredenzaDescription>
           </CredenzaHeader>
           <CredenzaFooter>
-            <Button onClick={resetState}>Je réessaye !</Button>
+            <Button
+              onClick={() => {
+                resetState();
+                setTab('ocean');
+              }}
+            >
+              Je réessaye !
+            </Button>
           </CredenzaFooter>
         </CredenzaContent>
       </Credenza>
@@ -128,7 +137,7 @@ export const GameModals: FC = () => {
               <Link href={'/podcasts'}>Voir les podcasts</Link>
             </Button>
             <Button asChild>
-              <Link href={'/'}>Retour à l&apos;accueil</Link>
+              <Link href={'/play'}>Recommencer</Link>
             </Button>
           </CredenzaFooter>
         </CredenzaContent>

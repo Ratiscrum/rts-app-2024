@@ -4,6 +4,7 @@ import { organs, Organs } from '@/models/organs.type';
 import { createContext, FC, useContext, useEffect, useState } from 'react';
 import { getRandomElement } from '../utils/utils';
 import { OrgansContext } from './organ-provider';
+import { TabContext } from './tab-provider';
 
 type GameState = 'playing' | 'lost' | 'win';
 
@@ -30,25 +31,26 @@ export const GameProvider: FC<Props> = ({ children }) => {
   const [lastSelection, setLastSelection] = useState(null as Organs | null);
 
   const { updateOrgan } = useContext(OrgansContext);
+  const { setTab } = useContext(TabContext);
 
   const selectOrgan = (organ: Organs) => {
     updateOrgan(organ, 'heal');
-
-    setTimeout(() => {
-      updateOrgan(organ, 'normal');
-    }, 2000);
-
     setLastSelection(organ);
+    setTab('corp');
 
     const win = organToHeal === organ;
 
-    if (win) {
-      // found !! win game
-      setState('win');
-    } else {
-      // not found
-      setState('lost');
-    }
+    setTimeout(() => {
+      updateOrgan(organ, 'normal');
+
+      if (win) {
+        // found !! win game
+        setState('win');
+      } else {
+        // not found
+        setState('lost');
+      }
+    }, 2000);
 
     return win;
   };
