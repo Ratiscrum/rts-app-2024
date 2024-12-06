@@ -74,8 +74,9 @@ const CredenzaContent = ({ className, children, ...props }: CredenzaProps) => {
   const isDesktop = useMediaQuery(desktop);
   const CredenzaContent = isDesktop ? DialogContent : DrawerContent;
 
+  // TODO: Fix z-index
   return (
-    <CredenzaContent className={className} {...props}>
+    <CredenzaContent className={cn(className, "z-[10000]")} {...props}>
       {children}
     </CredenzaContent>
   );

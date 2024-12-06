@@ -1,3 +1,4 @@
+import ElementDialog from '@/components/ocean/element-dialog';
 import OceanBackground from '@/components/ocean/ocean';
 import { Point } from '@/models/point.type';
 import { FC } from 'react';
@@ -11,16 +12,17 @@ export const OceanPanel: FC<Props> = ({ points }) => {
     <div className={'relative'}>
       <OceanBackground></OceanBackground>
       {points.map((point, idx) => (
-        <div
-          key={idx}
-          className={
-            'absolute z-[5000] h-2 w-2 -translate-x-1/2 -translate-y-full bg-orange-400'
-          }
-          style={{
-            top: `${point.topPrct}%`,
-            left: `${point.leftPrct}%`,
-          }}
-        ></div>
+        <ElementDialog point={point} key={idx}>
+          <div
+            className={
+              'absolute z-[5000] h-2 w-2 -translate-x-1/2 -translate-y-full bg-orange-400'
+            }
+            style={{
+              top: `${point.topPrct}%`,
+              left: `${point.leftPrct}%`,
+            }}
+          ></div>
+        </ElementDialog>
       ))}
     </div>
   );
