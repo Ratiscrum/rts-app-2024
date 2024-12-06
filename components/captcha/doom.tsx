@@ -4,10 +4,13 @@
 'use client';
 
 //@ts-ignore
-export default function DoomCaptcha({ onKill: any }) {
+export default function DoomCaptcha({ onKill }: { onKill: () => void }) {
   window.addEventListener('message', (event) => {
     //@ts-ignore
-    onKill();
+    if (event.data === 'KILL') {
+      console.log('KILLED LOL');
+      onKill();
+    }
   });
 
   return (

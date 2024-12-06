@@ -4,6 +4,7 @@ import { Button } from '@/components/ui/button';
 import { Label } from '@radix-ui/react-dropdown-menu';
 import { ArrowRight } from 'lucide-react';
 import Link from 'next/link';
+// import Captcha from '@/components/captcha/captcha';
 
 export default function Home() {
   return (
@@ -29,6 +30,9 @@ export default function Home() {
             <ArrowRight className="ml-2" />
           </Link>
         </Button>
+
+        {/*<Captcha captchaCompleted={}/>*/}
+
         <Label className="motion-preset-typewriter-[37] mt-4 text-sm text-muted-foreground repeat-[2] motion-duration-[4000ms] motion-delay-[1000ms]">
           N&apos;oubliez pas de demander du pain 🥖
         </Label>
