@@ -221,7 +221,7 @@ $oceanHeightStart: 35px;
 }
 
 .cPosTriangle {
-  z-index: 1000;
+  z-index: 43;
 }
 
 @keyframes sunset {
@@ -271,7 +271,7 @@ $oceanHeightStart: 35px;
 
 .rocks {
   position: relative;
-  z-index: 2000;
+  z-index: 49;
 
   .rock {
     position: absolute;
@@ -478,7 +478,7 @@ $oceanHeightStart: 35px;
   margin-top: -15px;
   width: 5000px;
   position: absolute;
-  z-index: 1500;
+  z-index: 45;
   transform: translateX(-250px);
   animation-name: triangles;
   animation-duration: 5s;

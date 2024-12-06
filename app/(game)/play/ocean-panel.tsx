@@ -13,28 +13,31 @@ type Props = {
 
 export const OceanPanel: FC<Props> = ({ className, seaElementsContent }) => {
   return (
-    <div className={cn('relative', className)}>
-      <BeachBackground></BeachBackground>
-      <OceanBackground></OceanBackground>
-      {seaElementsContent.map(async (seaElementContent, idx) => {
-        return (
-          <ElementDialog key={idx} point={seaElementContent.seaElementProps}>
-            <div>
-              <OceanElement
-                lottieSource={
-                  '/animations/' + seaElementContent.seaElementProps.lottieName
-                }
-                imageSource={
-                  '/images/' + seaElementContent.seaElementProps.imageName
-                }
-                topPrct={seaElementContent.seaElementProps.topPrct}
-                leftPrct={50}
-                className={'h-20 w-20'}
-              ></OceanElement>
-            </div>
-          </ElementDialog>
-        );
-      })}
+    <div className={'md:pt-16'}>
+      <div className={cn('relative h-full w-full border', className)}>
+        <BeachBackground></BeachBackground>
+        <OceanBackground></OceanBackground>
+        {seaElementsContent.map(async (seaElementContent, idx) => {
+          return (
+            <ElementDialog key={idx} point={seaElementContent.seaElementProps}>
+              <div>
+                <OceanElement
+                  lottieSource={
+                    '/animations/' +
+                    seaElementContent.seaElementProps.lottieName
+                  }
+                  imageSource={
+                    '/images/' + seaElementContent.seaElementProps.imageName
+                  }
+                  topPrct={seaElementContent.seaElementProps.topPrct}
+                  leftPrct={50}
+                  className={'h-20 w-20'}
+                ></OceanElement>
+              </div>
+            </ElementDialog>
+          );
+        })}
+      </div>
     </div>
   );
 };
