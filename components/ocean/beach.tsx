@@ -1,11 +1,6 @@
 import React from 'react';
 import OceanElement from '../ocean-element/ocean-element';
 import {
-  Tooltip,
-  TooltipTrigger,
-  TooltipContent,
-} from '@radix-ui/react-tooltip';
-import {
   Credenza,
   CredenzaContent,
   CredenzaTitle,
@@ -23,22 +18,19 @@ export default function BeachBackground() {
         topPrct={13}
         leftPrct={70}
         className={'h-[20%] w-[40%]'}
+        name="Discutez avec le Monkey !"
       ></OceanElement>
       <Credenza>
         <CredenzaTrigger>
-          <Tooltip>
-            <TooltipTrigger asChild>
-              <OceanElement
-                key={-2}
-                lottieSource={'/animations/monkey.json'}
-                imageSource={null}
-                topPrct={7}
-                leftPrct={65}
-                className={'h-[10%] w-[30%]'}
-              ></OceanElement>
-            </TooltipTrigger>
-            <TooltipContent>Communiquez avec le Monkey</TooltipContent>
-          </Tooltip>
+          <OceanElement
+            key={-2}
+            lottieSource={'/animations/monkey.json'}
+            imageSource={null}
+            topPrct={7}
+            leftPrct={65}
+            className={'h-[10%] w-[30%]'}
+            name="Discutez avec le Monkey !"
+          ></OceanElement>
         </CredenzaTrigger>
         <CredenzaContent className="">
           <CredenzaTitle>{null}</CredenzaTitle>

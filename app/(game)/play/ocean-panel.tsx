@@ -5,6 +5,9 @@ import { FC, useContext } from 'react';
 import OceanElement from '@/components/ocean-element/ocean-element';
 import { SeaElementsContext } from '@/lib/providers/sea-elements-provider';
 import BeachBackground from '@/components/ocean/beach';
+import { GameContext } from '@/lib/providers/game-provider';
+import { organsLabelsWithPrefix } from '@/models/organs.type';
+import { ArrowDown } from 'lucide-react';
 
 type Props = {
   className?: string;
@@ -12,12 +15,26 @@ type Props = {
 
 export const OceanPanel: FC<Props> = ({ className }) => {
   const elements = useContext(SeaElementsContext);
+  const { organToHeal } = useContext(GameContext);
 
   return (
     <div className={'md:pt-16'}>
       <div className={cn('relative h-full w-full border', className)}>
         <BeachBackground></BeachBackground>
         <OceanBackground></OceanBackground>
+        {organToHeal && (
+          <div className="motion-preset-compress fixed left-4 right-4 top-20 z-50 rounded-xl border-border bg-background p-2 text-center shadow">
+            Cliquez sur un élément de l&apos;océan pour essayer de guérir{' '}
+            <span className="font-bold">
+              {organsLabelsWithPrefix[organToHeal]}
+            </span>{' '}
+            de Jean-Marc !
+          </div>
+        )}
+
+        <div className="fixed bottom-16 left-1/2 z-50 flex -translate-x-1/2 animate-pulse justify-center rounded-xl border-border bg-background p-2 text-center shadow">
+          Continuez de fouiller <ArrowDown className="ml-2" />
+        </div>
         {elements.map(async (seaElementContent, idx) => {
           return (
             <ElementDialog key={idx} point={seaElementContent.seaElementProps}>
@@ -33,6 +50,7 @@ export const OceanPanel: FC<Props> = ({ className }) => {
                   topPrct={seaElementContent.seaElementProps.topPrct}
                   leftPrct={50}
                   className={'h-20 w-20'}
+                  name={seaElementContent.seaElementProps.title}
                 ></OceanElement>
               </div>
             </ElementDialog>

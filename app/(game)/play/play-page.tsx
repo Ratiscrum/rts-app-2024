@@ -7,6 +7,7 @@ import { CorpPanel } from './corp-panel';
 import { Tabs, TabsContent, TabsList, TabsTrigger } from '@/components/ui/tabs';
 import { OceanPanel } from './ocean-panel';
 import { Tab, TabContext } from '@/lib/providers/tab-provider';
+import { cn } from '@/lib/utils/utils';
 
 export const PlayPage: FC = () => {
   const isMobile = useIsMobile();
@@ -31,7 +32,10 @@ export const PlayPage: FC = () => {
           <TabsTrigger value="corp" className="w-full">
             Corp humain
           </TabsTrigger>
-          <TabsTrigger value="ocean" className="w-full">
+          <TabsTrigger
+            value="ocean"
+            className={cn('w-full', tab !== 'ocean' && 'animate-glow-infinite')}
+          >
             Océan
           </TabsTrigger>
         </TabsList>

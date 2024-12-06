@@ -75,9 +75,18 @@ export default {
           '0%,70%,100%': { opacity: '1' },
           '20%,50%': { opacity: '0' },
         },
+        glow: {
+          '0%': {
+            boxShadow: '0 0 0 0 hsl(var(--sidebar-primary))',
+          },
+          '100%': {
+            boxShadow: '0 0 20px 10px hsl(var(--sidebar-primary))',
+          },
+        },
       },
       animation: {
         'caret-blink': 'caret-blink 1.25s ease-out infinite',
+        'glow-infinite': 'glow 2s ease-in-out infinite alternate',
       },
       borderRadius: {
         lg: 'var(--radius)',

@@ -26,7 +26,8 @@ export const Organ: FC<Props> = ({ name, children, className }) => {
           'h-10 transition-all duration-1000',
           state === 'normal' && 'text-muted',
           state === 'hurt' && 'animate-pulse text-red-600',
-          state === 'heal' && 'scale-110 animate-pulse text-emerald-600',
+          state === 'heal' &&
+            'motion-preset-shrink scale-150 animate-pulse text-emerald-600',
           className,
         )}
         onClick={() => selectOrgan(name)}

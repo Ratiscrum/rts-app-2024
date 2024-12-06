@@ -2,6 +2,7 @@
 
 import { useEffect, useRef } from 'react';
 import lottie from 'lottie-web';
+import { Tooltip, TooltipContent, TooltipTrigger } from '../ui/tooltip';
 
 type OceanElementProps = {
   lottieSource: string | null;
@@ -9,6 +10,7 @@ type OceanElementProps = {
   topPrct: number;
   leftPrct: number;
   className?: string;
+  name?: string;
 };
 
 export default function OceanElement({
@@ -17,6 +19,7 @@ export default function OceanElement({
   topPrct,
   leftPrct,
   className,
+  name,
 }: OceanElementProps) {
   const animationContainer = useRef(null);
 
@@ -37,15 +40,21 @@ export default function OceanElement({
   }, [lottieSource]);
 
   return (
-    <div
-      ref={animationContainer}
-      style={{
-        top: `calc(${topPrct}%)`,
-        left: `${leftPrct}%`,
-      }}
-      className={
-        'absolute z-[49] -translate-x-1/2 -translate-y-full ' + className
-      }
-    ></div>
+    <Tooltip>
+      <TooltipTrigger asChild>
+        <div
+          ref={animationContainer}
+          style={{
+            top: `calc(${topPrct}%)`,
+            left: `${leftPrct}%`,
+          }}
+          className={
+            'absolute z-[49] -translate-x-1/2 -translate-y-full transition-all hover:scale-110 hover:brightness-110 ' +
+            className
+          }
+        ></div>
+      </TooltipTrigger>
+      <TooltipContent>{name}</TooltipContent>
+    </Tooltip>
   );
 }
