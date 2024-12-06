@@ -7,6 +7,23 @@ module.exports = {
   },
   transpilePackages: ['@wllama/wllama'],
   reactStrictMode: false,
+  async headers() {
+    return [
+      {
+        source: '/(.*)', // Appliquer à toutes les routes
+        headers: [
+          {
+            key: 'Cross-Origin-Embedder-Policy',
+            value: 'require-corp',
+          },
+          {
+            key: 'Cross-Origin-Opener-Policy',
+            value: 'same-origin',
+          },
+        ],
+      },
+    ];
+  },
 };
 
 const nextConfig: NextConfig = {

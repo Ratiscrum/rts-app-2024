@@ -1,17 +1,12 @@
 import React from 'react';
 import OceanElement from '../ocean-element/ocean-element';
 import {
-  Tooltip,
-  TooltipTrigger,
-  TooltipContent,
-} from '@radix-ui/react-tooltip';
-import {
   Credenza,
   CredenzaContent,
   CredenzaTitle,
   CredenzaTrigger,
 } from '../ui/credenza';
-import Chat from '@/app/(main)/chat/page';
+import Chat from '../shared/chat';
 
 export default function BeachBackground() {
   return (
@@ -20,25 +15,21 @@ export default function BeachBackground() {
         key={-1}
         lottieSource={'/animations/beach.json'}
         imageSource={null}
-        topPrct={13}
-        leftPrct={70}
-        className={'h-[20%] w-[40%]'}
+        topPrct={9.8}
+        leftPrct={75}
+        className={'h-96 w-96'}
       ></OceanElement>
       <Credenza>
         <CredenzaTrigger>
-          <Tooltip>
-            <TooltipTrigger asChild>
-              <OceanElement
-                key={-2}
-                lottieSource={'/animations/monkey.json'}
-                imageSource={null}
-                topPrct={7}
-                leftPrct={65}
-                className={'h-[10%] w-[30%]'}
-              ></OceanElement>
-            </TooltipTrigger>
-            <TooltipContent>Communiquez avec le Monkey</TooltipContent>
-          </Tooltip>
+          <OceanElement
+            key={-2}
+            lottieSource={'/animations/monkey.json'}
+            imageSource={null}
+            topPrct={8}
+            leftPrct={70}
+            className={'h-52 w-52'}
+            name="Discutez avec le Monkey !"
+          ></OceanElement>
         </CredenzaTrigger>
         <CredenzaContent className="">
           <CredenzaTitle>{null}</CredenzaTitle>

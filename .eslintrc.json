@@ -7,6 +7,9 @@
     "eslint:recommended",
     "plugin:@typescript-eslint/recommended"
   ],
+  "ignorePatterns": ["public/**"],
   "plugins": ["react", "@typescript-eslint"],
-  "ignorePatterns": ["public/**"]
+  "rules": {
+    "@typescript-eslint/no-explicit-any": "off"
+  }
 }

@@ -1,4 +1,6 @@
 'use client';
+import WasmFromCDN from '@wllama/wllama/esm/wasm-from-cdn.js';
+
 import { Wllama } from '@wllama/wllama';
 
 import {
@@ -10,7 +12,7 @@ import {
 } from 'react';
 
 const MODEL = {
-  url: 'https://huggingface.co/ngxson/SmolLM2-360M-Instruct-Q8_0-GGUF/resolve/main/smollm2-360m-instruct-q8_0.gguf',
+  url: 'https://huggingface.co/hugging-quants/Llama-3.2-1B-Instruct-Q4_K_M-GGUF/resolve/685a97a04b902907c63760a88cfee526d13d07a2/llama-3.2-1b-instruct-q4_k_m.gguf',
 };
 
 interface WllamaContextValue {
@@ -22,7 +24,7 @@ interface WllamaContextValue {
   stopGenerating: () => void;
   isModelLoading: boolean;
   isUnsupported: boolean;
-  getWllamaInstance: () => Wllama | null;
+  getWllamaInstance: () => Wllama;
 }
 
 let stopSignal = false;
@@ -31,26 +33,22 @@ let stopSignal = false;
 const WllamaContext = createContext<WllamaContextValue>({} as any);
 export const WllamaProvider = ({ children }: { children: ReactNode }) => {
   const [isGenerating, setGenerating] = useState(false);
-  const [wllamaInstance, setWllamaInstance] = useState<Wllama | null>(null);
+  const [wllamaInstance, setWllamaInstance] = useState<Wllama>();
   const [isModelLoading, setModelLoading] = useState(true);
   const [isUnsupported, setUnsupported] = useState(false);
 
   const initWllama = async () => {
-    const wllamaInstance = new Wllama({
-      'single-thread/wllama.wasm': './wllama/single-thread/wllama.wasm',
-      'multi-thread/wllama.wasm': './wllama/multi-thread/wllama.wasm',
-    });
+    const wllamaInstance = new Wllama(WasmFromCDN);
     setWllamaInstance(wllamaInstance);
 
     try {
       console.log('Loading model from url', MODEL.url);
       await wllamaInstance.loadModelFromUrl(MODEL.url, {
-        n_threads: -1, // auto threads
+        // n_threads: 0,
         // bellow value needs to be finetuned
         n_ctx: 4096,
         n_batch: 128,
       });
-      console.log('Model loaded');
       setModelLoading(false);
     } catch (error) {
       console.error('Failed to load model', error);
@@ -98,7 +96,7 @@ export const WllamaProvider = ({ children }: { children: ReactNode }) => {
         stopGenerating,
         isModelLoading,
         isUnsupported,
-        getWllamaInstance: () => wllamaInstance,
+        getWllamaInstance: () => wllamaInstance as Wllama,
       }}
     >
       {children}
