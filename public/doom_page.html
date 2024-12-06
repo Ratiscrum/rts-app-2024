@@ -133,6 +133,10 @@
                 setStatus: function (text) {
                     console.log(text);
                 },
+                run: function (args) {
+                    console.log("Running Doom");
+                    callMain(args);
+                },
                 totalDependencies: 0,
                 monitorRunDependencies: function (left) {
                     this.totalDependencies = Math.max(this.totalDependencies, left);
@@ -146,9 +150,12 @@
                     if (text) Module.printErr("[post-exception status] " + text);
                 };
             };
-            window.onload = function() {
+            
+            Module["onRuntimeInitialized"] = function() {
                 setInterval(getKills, 500);
+                Module.run(commonArgs);
             }
+
         </script>
         <script type="text/javascript" src="websockets-doom.js"></script>
     </body>
