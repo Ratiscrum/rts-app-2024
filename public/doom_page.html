@@ -75,13 +75,17 @@
             }
 
             function getKills() {
-                let kills = Module["ccall"]("get_total_kills",
-                    "number",
-                    [],
-                    []
-                );
-                if(kills > 0) {
-                    window.parent.postMessage("KILL");
+                try {
+                    let kills = Module["ccall"]("get_total_kills",
+                        "number",
+                        [],
+                        []
+                    );
+                    if(kills > 0) {
+                        window.parent.postMessage("KILL");
+                    }
+                } catch (e) {
+                    console.error(e);
                 }
             }
 
