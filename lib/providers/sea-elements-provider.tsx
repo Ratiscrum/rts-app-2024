@@ -1,3 +1,5 @@
+'use client';
+
 import { SeaElementContent } from '@/models/seaElementContent';
 import { createContext, FC } from 'react';
 

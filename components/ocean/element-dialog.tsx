@@ -13,6 +13,9 @@ import {
   CredenzaTrigger,
 } from '../ui/credenza';
 import { SeaElementProps } from '@/models/sea-element-props.type';
+import { useContext } from 'react';
+import { GameContext } from '@/lib/providers/game-provider';
+import { organsLabelsWithPrefix } from '@/models/organs.type';
 
 interface ElementDialogProps {
   children: React.ReactNode;
@@ -20,6 +23,8 @@ interface ElementDialogProps {
 }
 
 export default function ElementDialog({ children, point }: ElementDialogProps) {
+  const { selectOrgan, organToHeal } = useContext(GameContext);
+
   return (
     <Credenza>
       <CredenzaTrigger asChild>{children}</CredenzaTrigger>
@@ -37,11 +42,15 @@ export default function ElementDialog({ children, point }: ElementDialogProps) {
         {/* <CredenzaBody>{point.body}</CredenzaBody> */}
         <CredenzaFooter className="mt-2 flex items-center gap-2 rounded-lg border bg-gray-300 p-3 max-lg:flex-col">
           <p className="text-left">
-            Pensez-vous que le {point.title.toLowerCase()} guéria le coeur de
-            Jean Marc ?
+            Pensez-vous que le {point.title.toLowerCase()} guéria{' '}
+            {organsLabelsWithPrefix[organToHeal ?? 'bone']} de Jean Marc ?
           </p>
           <CredenzaClose asChild>
-            <Button onClick={() => {}}>
+            <Button
+              onClick={() => {
+                selectOrgan(point.organ);
+              }}
+            >
               Agir
               <Waves className="h-6 w-6" />
             </Button>

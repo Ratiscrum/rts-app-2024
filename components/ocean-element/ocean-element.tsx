@@ -40,11 +40,11 @@ export default function OceanElement({
     <div
       ref={animationContainer}
       style={{
-        top: `${topPrct}%`,
+        top: `calc(${topPrct}%)`,
         left: `${leftPrct}%`,
       }}
       className={
-        'absolute z-[5000] -translate-x-1/2 -translate-y-full ' + className
+        'absolute z-[49] -translate-x-1/2 -translate-y-full ' + className
       }
     ></div>
   );
