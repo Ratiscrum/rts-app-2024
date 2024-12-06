@@ -4,16 +4,12 @@ import Link from 'next/link';
 import { usePathname } from 'next/navigation';
 import { cn } from '@/lib/utils/utils';
 import RatiLogo from '../shared/rati-logo';
-import { ThemeToggle } from '../shared/theme-toggle';
 import { MobileSidebar } from './mobile-sidebar';
 import { SidebarTrigger } from '../ui/sidebar';
 
 const NavLinks = () => {
   const pathname = usePathname();
-  const links = [
-    { href: '/podcasts', label: 'Podcasts' },
-    // { href: '/chat', label: 'Chat' },
-  ];
+  const links = [{ href: '/podcasts', label: 'Podcasts' }];
 
   return (
     <nav className="ml-10 hidden items-center gap-4 text-sm sm:flex xl:gap-6">
@@ -66,11 +62,16 @@ const NavLinks = () => {
 //   </div>
 // );
 
-export default function Header() {
+export default function Header({ className }: { className?: string }) {
   // const { user } = useUserContext();
 
   return (
-    <header className="sticky top-0 z-50 w-full border-b border-border/40 shadow backdrop-blur dark:border-border">
+    <header
+      className={cn(
+        'sticky top-0 z-50 w-full border-b border-border/40 bg-background/80 shadow backdrop-blur dark:border-border',
+        className,
+      )}
+    >
       <div className="mx-auto flex h-16 max-w-screen-xl items-center justify-between px-4">
         <div className="flex items-center gap-2 lg:mr-6">
           <Link
@@ -82,7 +83,7 @@ export default function Header() {
           <NavLinks />
         </div>
         <div className="flex items-center gap-4">
-          <ThemeToggle />
+          {/* <ThemeToggle /> */}
           {/* {user && (
             <div className="hidden sm:block">
               <ConnectedUserMenu

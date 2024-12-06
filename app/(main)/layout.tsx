@@ -1,15 +1,7 @@
 import type { Metadata } from 'next';
-import localFont from 'next/font/local';
-import './globals.css';
-import { cn } from '@/lib/utils/utils';
-import { ProviderWrapper } from '@/components/shared/provider-wrapper';
-import { appName, appUrl, description } from './manifest';
-import { WllamaProvider } from '@/lib/providers/llm-provider';
-
-const inter = localFont({
-  src: '../public/fonts/InterVariable.ttf',
-  variable: '--font-inter',
-});
+import Header from '@/components/layouts/header';
+import Footer from '@/components/layouts/footer';
+import { appName, appUrl, description } from '../manifest';
 
 export const metadata: Metadata = {
   title: appName,
@@ -48,12 +40,12 @@ export default function RootLayout({
   children: React.ReactNode;
 }>) {
   return (
-    <html lang="en" suppressHydrationWarning>
-      <body className={cn(inter.variable, 'font-sans')}>
-        <WllamaProvider>
-          <ProviderWrapper>{children}</ProviderWrapper>
-        </WllamaProvider>
-      </body>
-    </html>
+    <main className="flex min-h-screen w-full flex-col">
+      <Header />
+      <div className="my-8 flex w-full max-w-screen-xl flex-1 flex-col px-4 lg:mx-auto lg:px-2">
+        {children}
+      </div>
+      <Footer />
+    </main>
   );
 }

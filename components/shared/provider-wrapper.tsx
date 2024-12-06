@@ -13,9 +13,8 @@ export const ProviderWrapper: FC<ProviderWrapperProps> = ({ children }) => {
   return (
     <ThemeProvider
       attribute="class"
-      defaultTheme="system"
-      themes={['light', 'dark', 'system', 'ocean']}
-      enableSystem
+      defaultTheme="ocean"
+      themes={['ocean']}
       disableTransitionOnChange
     >
       <SidebarProvider defaultOpen={false}>
