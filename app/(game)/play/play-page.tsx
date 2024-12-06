@@ -80,16 +80,19 @@ export const PlayPage: FC = () => {
 
   if (isMobile) {
     return (
-      <Tabs defaultValue="corp" className="h-full w-full">
+      <Tabs
+        defaultValue="corp"
+        className="flex h-full w-full flex-1 flex-col overflow-x-hidden"
+      >
         <TabsContent value="corp" className="flex-1">
           <CorpPanel />
         </TabsContent>
         <TabsContent value="ocean" className="flex-1">
-          <ScrollArea className="flex-1">
-            <OceanPanel points={points} />
+          <ScrollArea className="h-[calc(100vh-130px)]">
+            <OceanPanel points={points} className="w-full" />
           </ScrollArea>
         </TabsContent>
-        <TabsList className="w-full">
+        <TabsList className="fixed bottom-0 mt-2 w-full">
           <TabsTrigger value="corp" className="w-full">
             Corp humain
           </TabsTrigger>
@@ -101,7 +104,7 @@ export const PlayPage: FC = () => {
     );
   } else {
     return (
-      <main className="grid h-screen lg:grid-cols-3">
+      <main className="grid h-screen grid-cols-3">
         <ScrollArea className="col-span-2">
           <OceanPanel points={points} />
         </ScrollArea>

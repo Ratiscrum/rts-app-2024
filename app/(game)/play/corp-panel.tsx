@@ -15,7 +15,8 @@ export const CorpPanel: FC = () => {
         <h4>Jean-Marc a besoin de votre aide !</h4>
         {title && (
           <p>
-            Agissez sur l&apos;océan pour guérir{' '}
+            La santé de l&apos;océan se répercute sur Jean-Marc. Explorez
+            l&apos;océan pour trouver ce qui guérira{' '}
             <span className="font-bold text-primary">{title}</span> de Jean-Marc
           </p>
         )}
