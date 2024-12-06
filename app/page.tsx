@@ -9,9 +9,11 @@ export default function Home() {
     <div className="flex flex-grow flex-col items-center px-4">
       <div className="flex flex-1 flex-col items-center justify-center text-center">
         <RatiLogo size="md" />
+        <h2 className="mt-8 text-primary">Allons sauver l’océan</h2>
         <p className="mb-8 mt-6 w-2/4 text-lg">
-          Participez à une expérience de jeu unique avec un rat intelligent et
-          un peu foufou sur les bords...
+          Jean Marc est tombé dans un océan magique et sa santé s’est liée à
+          celle de l’océan. Une seule solution pour guérir Jean Marc : sauver
+          l’océan.
         </p>
         <Button
           className="motion-preset-pulse-sm w-1/2 motion-duration-[1800ms] motion-delay-[500ms]"
